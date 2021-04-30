@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.wrap-login100
+{
+    width: 960px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 61px 130px 33px 95px;
+}
+
+.content-body  {
+    min-height: 100% !important; 
+    padding: 36px 1rem !important;
+    display: block;
+}
+.background{
+width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #9053c7;
+    background: -webkit-linear-gradient(
+-135deg
+, #c850c0, #4158d0);
+    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(
+-135deg
+, #ef6515, #f8f9fa);
+}
+.Heading
+{
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: darkblue;
+}
+.loginBtn
+{
+    padding-top: 21px;
+}
