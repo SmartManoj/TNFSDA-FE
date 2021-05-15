@@ -1,0 +1,1859 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>தீயணைப்பு துறை</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/fireicon.jpg">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="scripts/DataTables-1.10.11/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="scripts/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="scripts/fileinput.min.css" />
+    <link rel="stylesheet" href="scripts/bootstrap-duallistbox-master/src/bootstrap-duallistbox.css" />
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/kendo.common-nova.min.css" />
+    <link rel="stylesheet" href="styles/kendo.nova.min.css" />
+    <link rel="stylesheet" href="styles/kendo.nova.mobile.min.css" />
+    <script src="scripts/jquery-1.10.2.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="scripts/fileinput.min.js"></script>
+    <script src="scripts/moment-develop/moment.js"></script>
+
+    <script src="scripts/transition.js"></script>
+    <script src="scripts/collapse.js"></script>
+    <script src="scripts/DataTables-1.10.11/js/jquery.dataTables.min.js"></script>
+
+    <script src="scripts/bootstrap-duallistbox-master/src/jquery.bootstrap-duallistbox.js"></script>
+    <script src="scripts/bootstrap-toggle.min.js"></script>
+    <script src="scripts/DataTables-1.10.11/js/dataTables.bootstrap.min.js"></script>
+    <script src="scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="scripts/jquery.slimscroll.min.js"></script>
+
+    <style>
+        .k-grid {
+            border-color: #bbb;
+        }
+
+        .k-edge .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+        .k-ff .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+        .k-ie11 .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+        .k-safari .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+        .k-webkit .k-pager-numbers.k-state-expanded .k-current-page .k-link {
+            background-color: #09abdd;
+            border-color: #09abdd;
+        }
+
+        .k-edge .k-pager-wrap .k-pager-numbers .k-state-selected,
+        .k-ff .k-pager-wrap .k-pager-numbers .k-state-selected,
+        .k-ie11 .k-pager-wrap .k-pager-numbers .k-state-selected,
+        .k-safari .k-pager-wrap .k-pager-numbers .k-state-selected,
+        .k-webkit .k-pager-wrap .k-pager-numbers .k-state-selected {
+            background-color: #09abdd;
+            border-color: #09abdd;
+        }
+
+        .k-autocomplete.k-state-active,
+        .k-dropdown-wrap.k-state-active,
+        .k-multiselect.k-header.k-state-active,
+        .k-numeric-wrap.k-state-active,
+        .k-picker-wrap.k-state-active {
+            background-color: #09abdd;
+            border-color: #09abdd;
+        }
+
+        .k-grid-footer,
+        .k-grid-footer td,
+        .k-grid-header,
+        .k-grid-header .k-header,
+        .k-pager-numbers .k-state-selected,
+        .k-pager-wrap,
+        .k-scheduler-header,
+        .km-pane-wrapper .k-grid-header .k-header {
+            border-color: #777;
+        }
+
+        .k-button.k-state-active,
+        .k-button:active {
+            background-color: #09abdd;
+            border-color: #09abdd;
+        }
+
+        .k-button.k-state-focused,
+        .k-button:focus {
+            border-color: #09abdd;
+        }
+
+        .k-popup .k-list .k-state-selected {
+            background-color: #09abdd;
+            border-color: #09abdd;
+        }
+
+        .k-popup .k-list .k-state-selected.k-state-focused {
+            background-color: #09abdd;
+            border-color: #09abdd;
+        }
+
+        .k-grid-header .k-i-sort-asc-sm,
+        .k-grid-header .k-i-sort-asc-sm:hover,
+        .k-grid-header .k-i-sort-desc-sm,
+        .k-grid-header .k-i-sort-desc-sm:hover,
+        .k-grid-header .k-sort-order {
+            color: #fff;
+        }
+
+        .k-pager-wrap .k-icon,
+        .k-pager-wrap>.k-link>.k-icon {
+            margin-top: 2px;
+        }
+
+        .k-pager-numbers .k-state-selected {
+            color: #fff;
+            line-height: 1.429em;
+        }
+
+        .k-listbox .k-item {
+            border: 0;
+            border-bottom: 1px solid #eee;
+            padding: 5px 5px;
+            cursor: pointer;
+        }
+
+        .k-grid-header th.k-header>.k-link {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .k-grid-footer,
+        .k-grid-footer td,
+        .k-grid-header,
+        .k-grid-header .k-header,
+        .k-pager-numbers .k-state-selected,
+        .k-scheduler-header,
+        .km-pane-wrapper .k-grid-header .k-header {
+            background: #1f2f3e;
+        }
+
+        .k-filter-row {
+            background: #D3D3D3;
+        }
+
+        .k-filter-row .k-widget {
+            height: 24px;
+        }
+
+        .k-filter-row input[type=text] {
+            height: 22px;
+        }
+
+        .k-filter-row .k-dropdown-operator {
+            width: 20px;
+        }
+
+        .k-filter-row .k-dropdown-wrap .k-input {
+            height: 22px;
+            line-height: 22px;
+            padding: 0;
+        }
+
+        .k-pager-wrap .k-link {
+            height: 1.429em;
+            line-height: 1.429em;
+            color: #999;
+        }
+
+        .k-filter-row th {
+            padding: .0em .6em .0em 1.286em;
+        }
+
+        .k-grid .k-filter-row:hover {
+            background: #D3D3D3;
+        }
+
+        .k-button-icon,
+        .k-split-button-arrow {
+            padding: 0 !important;
+            height: -webkit-calc(1.143em + (2*5px) + 2px);
+            height: calc(1.143em + (2*5px) + 2px);
+            width: -webkit-calc(1.143em + (2*5px) + 2px);
+            width: calc(1.143em + (2*5px) + 2px);
+        }
+
+        .k-dropdown-wrap {
+            padding: 0 1.9em 0 0;
+        }
+
+        .k-dropdown-wrap .k-select {
+            padding-top: 2px;
+            width: 24px;
+            height: 20px;
+            min-height: 16px;
+            line-height: 16px;
+        }
+
+        .k-checkbox:checked+.k-checkbox-label:before {
+            color: #09abdd;
+
+        }
+
+        .k-checkbox-label:active:before,
+        .k-checkbox:active+.k-checkbox-label:before {
+            border-color: #09abdd !important;
+        }
+
+        .k-checkbox:checked+.k-checkbox-label:active:before,
+        .k-checkbox:checked:active+.k-checkbox-label:before {
+            border-color: #09abdd !important;
+        }
+
+        .k-checkbox:focus+.k-checkbox-label:before,
+        .k-checkbox:focus+.k-checkbox-label:hover:before {
+            border-color: #09abdd !important;
+        }
+
+        .k-grid .k-icon {
+            opacity: 1;
+        }
+
+        .k-popup .k-list .k-item {
+            color: #000;
+        }
+
+        .k-menu .k-state-hover .k-link.k-state-active {
+            background: #eee;
+            color: #000;
+        }
+
+        .k-menu .k-item>.k-state-active {
+            background: #eee;
+            color: #000;
+        }
+
+        .k-menu .k-popup .k-item {
+            color: #000;
+        }
+
+        input.k-textbox:active {
+            border-color: #09abdd;
+        }
+
+        .k-edit-form-container .k-primary,
+        .k-filter-menu .k-primary {
+            color: #000;
+        }
+
+        .km-switch-background,
+        .km-switch-handle {
+            color: #09abdd;
+        }
+
+        .km-switch-off .km-switch-handle {
+            box-shadow: none;
+        }
+
+        .km-switch-container,
+        .km-switch-wrapper {
+            background: #09abdd;
+        }
+
+        .readonlyswitch .km-state-disabled {
+            opacity: 1;
+            cursor: not-allowed !important;
+        }
+
+        .k-numeric-wrap:before {
+            content: none;
+        }
+
+        .k-grid-content .k-button,
+        .k-grid-toolbar .k-button {
+            background-color: #09abdd;
+            border-color: #09abdd;
+            color: #000;
+        }
+
+        .k-grid-content .k-button-icontext:active,
+        .k-grid-toolbar .k-button:active {
+            background-color: #09abdd;
+            border-color: #09abdd;
+
+        }
+
+        .k-grid-header th.k-header {
+            font-weight: bold;
+            color: #fff;
+            padding: 0.6em;
+        }
+
+        .k-grid .k-numeric-wrap .k-link.k-state-selected,
+        .k-numeric-wrap .k-link.k-state-selected {
+            background-color: #09abdd;
+        }
+
+        .k-numeric-wrap.k-state-disabled .k-input {
+            cursor: not-allowed;
+            background-color: #eeeeee;
+            color: #999;
+        }
+
+        .k-numerictextbox .k-link {
+            height: 1.12em;
+        }
+
+        .k-dropzone em,
+        .k-slider .k-draghandle,
+        .k-state-disabled,
+        .k-state-disabled .k-link,
+        .k-tile-empty strong {
+            color: #999;
+            background-color: #eeeeee;
+        }
+
+        .k-pager-info {
+            padding: 0 1.333em 0 1.333em;
+        }
+
+        /**********kendo nova css ****************/
+        .k-listbox .k-item.k-state-selected {
+            background-color: #E1F1F0;
+            border-bottom: 1px solid #999;
+            border-left: 0;
+            border-right: 0;
+            color: #000;
+        }
+
+        .k-listbox .k-item:hover {
+            cursor: pointer;
+        }
+
+        .k-listbox .k-item.k-state-selected:hover {
+            background-color: #E1F1F0;
+        }
+
+        .k-grid .k-alt {
+            background-color: #f5f6f6;
+        }
+
+        .k-grid td {
+            padding: .4em .6em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .k-listbox .k-item.k-state-disabled {
+            border-bottom: 1px solid #fff;
+            background: #eee;
+            color: #555;
+            cursor: not-allowed !important;
+        }
+
+        @font-face {
+            font-family: myTamilFont;
+            src: url(fonts/ismail_0.ttf);
+        }
+
+        input {
+            font-family: myTamilFont;
+        }
+
+        .tamilClass {
+            font-family: myTamilFont;
+        }
+    </style>
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .closeSpan {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .closeSpan:hover,
+        .closeSpan:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maincontainer">
+        <!--topheader-->
+        <header>
+
+            <div style="width:250px; float:left;">
+                <div class="logo"><img src="images/fireacc.jpg" style="width:48px;"></div>
+                <div class="appname">
+                    தமிழ்நாடு தீயணைப்பு துறை
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!--logo-->
+
+            <div class="usercontainer fright" id="usersetting">
+
+            </div>
+            <div class="site fright">
+                <div class="row">
+
+                    <div class="col-sm-12" style="padding: 0">
+                        <select class="select" id="location" title="Choose Language">
+                            <option>தமிழ்</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <!--end usercontainer-->
+            <div class="clear"></div>
+        </header>
+        <!--end topheader-->
+        <div id="sidebar">
+
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" data-parent="#accordion" data-target="#collapse1" aria-expanded="true">
+                            <i class="fa fa-tasks"></i> தனிப்பணி <span class="glyphicon glyphicon-menu-down plus pull-right "></span><span class="glyphicon glyphicon-menu-right minus pull-right"></span>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in" aria-expanded="true">
+                        <div class="panel-body">
+                            <ul class="menuleft">
+                                <li class="active"><a href="../index.html"><i class="fa fa-gear "></i><span>முகப்பு பக்கம்</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="heading">
+                <h3>ஆணை எண் 321(4),படிவம் எண் 40.</h3>
+            </div>
+            <div class="contentbox">
+                <div class="contentinner">
+                    <div id="previewprocess" style="display: block;">
+                        <div class="headingsection">
+                            <!-- <div class="iconbutton showgriddiv" style="line-height: 50px; padding: 0 10px; cursor: pointer; font-weight: bold"> Back</div>-->
+
+                            <h3>தனிப்பணி அறிக்கை</h3>
+
+                            <button class="btn btn-primary" id="myBtn" onclick="myFunction()" style="background: none;color: #266085;margin-right: 700px;max-width: 350px;"> Preview
+                            </button>
+
+                            <div class="processfullname" style="background: none;color: #266085;margin-left: 50px;max-width: 350px;">.N.F.S. 25 -
+                                90,000 Cps.-GBP., Vdm.-2015</div>
+
+                        </div>
+
+
+                        <div class="width100p">
+                            <section>
+                                <div class="subheading">
+                                    <h3>பொதுவானது</h3>
+                                </div>
+                                <div class="contentinner">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">கோட்டம் </label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <select id="kottamVal" title="கோட்டம்">
+                                                    <option value="0">தேர்வு செய்யவும்</option>
+                                                    <option value="1">திருவாரூர்</option>
+                                                    <option value="2">நாகப்பட்டினம் </option>
+
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label"> விபத்து அறிக்கை எண் </label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="announcementNo" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">நிலையம் </label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <select id="stationVal">
+
+
+                                                </select>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">விபத்து நேர்ந்த நாள்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="accidentDateVal" type="date" placeholder="" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">தீயணைப்பு நடந்த இடத்தில் பொறுப்பு வகித்த
+                                                    அலுவலர்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="fireOfficerName" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="subheading">
+                                    <h3>அழைப்பு</h3>
+                                </div>
+                                <div class="contentinner">
+                                    <div class="row">
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">அழைத்தவர்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="callingCallerName" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">தொலைபேசி / தீ எச்சரிக்கை எண்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="callingTelephoneNo" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">விபத்துக்குள்ளான இடத்தின் முகவரி</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="callingAccidentAddress" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+
+                                        </div>
+
+
+                                        <div class="clear"></div>
+                                        <div class="col-sm-6 col-md-6">
+                                            <div class="col-sm-8 col-md-8">
+                                                <label class="tamilClass"> <input id="AllInOnePerson" type="checkbox">
+                                                    miHj;jth; / mDgtpg;gth; / Chpikahsh; xd;W vdpy;</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">அனுபவிப்பவரின் பெயர்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="senderName" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">தொழில்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="callingsenderJob" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">உரிமையாளரின் பெயர், முகவரி</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="ownerNameAndAddress" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">அழைத்த நேரம்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="callingTime" type="time" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">வண்டிகள் முதலில் புறப்பட்டு சென்ற நேரம்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="vehicleStartedTime" type="time" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">விபத்து நடந்த இடத்தில் வந்து சேர்ந்த நேரம் </label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="vehicleReachedTime" type="time" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">நிலையத்திற்கும் விபத்து நடந்த இடத்திற்குமுள்ள
+                                                    தொலைவு</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="betweenDistance" type="number" placeholder="கிலோ மீட்டர்" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <section id="thingsValues">
+                                <div class="subheading">
+                                    <h3>விபத்தை பற்றிய விவரங்கள்</h3>
+                                </div>
+                                <div class="contentinner">
+                                    <div class="row" id="contentinners">
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">நிகழ்ச்சியின் நேரம்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="incidentTime" type="time" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">விபத்தை பற்றிய முழு விவரம்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="detailAbtFire" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <div class="clear"></div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">காரணம் எனக் கருதப்படுவது</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="reasonForFire" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">புரிந்த பணி</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="rescueWork" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">தீ விபத்து நடந்த இடத்தை விட்டுப் புறப்பட்ட கடைசி
+                                                    அலுவலரின் பெயர்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="lastReturnFireOfficer" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">தீ விபத்து நடந்த இடத்தை விட்டுப் புறப்பட்ட நாளும்,
+                                                    நேரமும்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="ReturnDateTimeFromFireAccident" type="datetime-local" placeholder="" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="col-sm-6 margintop10">
+                                            <div class="col-sm-6 col-md-6">
+                                                <label class="label">தனிப்பணிக்கு ஆன மொத்த நேரம் மணி/நிமிடம்</label>
+                                            </div>
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="fireControllingTime" type="time" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="rescueValue">
+                                <div class="subheading">
+                                    <h3>தப்பித்துக்கொண்டவர்கள் / காப்பாற்றப்பட்டவர்கள்</h3>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3 margintop10">
+                                    <div>
+                                        <input type="checkbox" id="checkbox5" style="width :100%" aria-label="System Attribute" />
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="contentinner">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="viewtable">
+                                                <tr>
+                                                    <th> தீயணைப்பு பணியாளரின் உதவியின்றி தப்பித்து கொண்டவர்கள்</th>
+                                                    <th>கருவிகளின் உதவியின்றி தீயணைப்புப் பணியாளரால் தீயின்றும் வெளியேற
+                                                        உதவி செய்யப்பட்டவர்கள்</th>
+                                                    <th>கருவிகளை பயன்படுத்தி தீயணைப்புப் பணியாளரால்
+                                                        காப்பாற்றப்பட்டவர்கள்</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>ஆண் : <input id="male1" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td>ஆண் : <input id="male2" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td>ஆண் : <input id="male3" type="text" placeholder="" style="width:100%;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>பெண் : <input id="female1" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td>பெண் : <input id="female2" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td>பெண் : <input id="female3" type="text" placeholder="" style="width:100%;"></td>
+
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="clear"></div>
+                                <div>
+                                    <br>
+                                    <label class="tamilClass" style="font-color: red;">Fwpg;g[: bgha; miHg;g[fisg;
+                                        gw;wpa mwpf;ikfis, mwpf;ifg; gotj;jpy; 2 k; ghfj;jpy; FWf;fhf rptg;g[ ikapy;
+                                        “bgha;ahdJ” vd;W ep\gpf;f Btz;Lk;.</label>
+                                </div>
+
+                            </section>
+                            <section id="accidentInDetails">
+                                <div class="subheading">
+                                    <h3>அடிபாடுகள்</h3>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3 margintop10">
+                                    <div>
+                                        <input type="checkbox" id="checkbox6" style="width :100%" aria-label="System Attribute" />
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="contentinner">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table class="viewtable">
+                                                <tr>
+                                                    <th></th>
+                                                    <th>இறந்தவர்கள்</th>
+                                                    <th></th>
+                                                    <th>காயமடைந்தவர்கள்</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>தீயணைப்பு பணியாளர்</td>
+                                                    <td>ஆண் : <input id="Vmale1" type="text" placeholder="" style="width:100%;">
+                                                        பெண் : <input id="VFemale1" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td>தீயணைப்பு பணியாளர்</td>
+                                                    <td>ஆண் : <input id="Vmale2" type="text" placeholder="" style="width:100%;">
+                                                        பெண் : <input id="VFemale2" type="text" placeholder="" style="width:100%;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>மற்றவர்கள்</td>
+                                                    <td>ஆண் : <input id="Vmale3" type="text" placeholder="" style="width:100%;">
+                                                        பெண் : <input id="VFemale3" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td>மற்றவர்கள்</td>
+                                                    <td>ஆண் : <input id="Vmale4" type="text" placeholder="" style="width:100%;">
+                                                        பெண் : <input id="VFemale4" type="text" placeholder="" style="width:100%;"></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div>
+                                    <br>
+                                    <label class="tamilClass" style="font-color: red;">jPaizg;g[g; gzpapdhpd; tp&aj;jpy;
+                                        jPaizg;g[g; gzp vz;fisf; Fwpg;gpl;lhy; BghJkhdJ.</label>
+                                </div>
+
+                            </section>
+                            <section id="machineDetails">
+                                <div class="subheading">
+                                    <h3>விபத்து நடந்த இடத்தில் வந்து செயலாற்றுதல்</h3>
+                                </div>
+
+                                <div class="clear"></div>
+
+                                <div class="contentinner">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="fright">
+                                                <button class="buttonlarge" title="சேர் / திருத்து">
+                                                    <i class="fa fa-plus-circle"></i>
+                                                </button>
+                                            </div>
+                                            <table class="viewtable">
+                                                <tr>
+                                                    <th>தீயணைப்புப் நிலையத்தின் பெயர்</th>
+                                                    <th>செயற்கருவியின் மாதிரி</th>
+                                                    <th>பதிவு எண்</th>
+                                                    <th>புறப்பட்ட நேரம்</th>
+                                                    <th>விபத்து நடந்த இடத்திற்கு வந்து சேர்ந்த நேரம்</th>
+                                                    <th>விபத்து நேர்ந்த இடத்தை விட்டு புறப்பட்ட நேரம்</th>
+                                                    <th>சொந்த நிலையத்திற்கு வந்து சேர்ந்த நேரம்</th>
+                                                    <th>பயணம் செய்த நேரம்</th>
+                                                    <th>நீரடித்த மணி நேரம்</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><input id="male1" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male2" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male2" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male1" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male2" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male2" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male1" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male2" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male2" type="text" placeholder="" style="width:100%;"></td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="clear"></div>
+
+
+                            </section>
+                            <section id="leaveDetails">
+                                <div class="subheading">
+                                    <h3>வந்து செயலாற்றிய தீயணைப்பு அலுவலர் மற்றும் தீயணைப்பு பணியினர்</h3>
+
+                                </div>
+
+                                <div class="clear"></div>
+                                <h6>(விடுப்பு ஆட்களை சேர்க்க கூடாது)</h6>
+                                <div class="contentinner">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="fright">
+                                                <button class="buttonlarge" title="சேர் / திருத்து">
+                                                    <i class="fa fa-plus-circle"></i>
+                                                </button>
+                                            </div>
+                                            <table class="viewtable">
+                                                <tr>
+                                                    <th>தரம்</th>
+                                                    <th>எண்</th>
+                                                    <th>பெயர்</th>
+
+
+                                                </tr>
+                                                <tr>
+                                                    <td><input id="male1" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male2" type="text" placeholder="" style="width:100%;"></td>
+                                                    <td><input id="male2" type="text" placeholder="" style="width:100%;"></td>
+
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="clear"></div>
+
+
+                            </section>
+                            <section id="otherDetails">
+                                <div class="subheading">
+                                    <h3>வேறு எவையேனும் குறிப்புகள்</h3>
+
+                                </div>
+
+                                <div class="clear"></div>
+
+                                <div class="contentinner">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-6 col-md-6">
+                                                <input id="otherdetail" type="text" placeholder="இங்கே தட்டச்சு செய்க" style="width:100%;">
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="clear"></div>
+
+
+                            </section>
+                            <div class="processfullname" style="background: none;color: #266085;margin-left: 25px;max-width: 350px;">(ஒப்பம்)
+                            </div>
+                            <div class="clear"></div>
+                            <div class="col-sm-6 col-md-6">
+
+                            </div>
+                            <div class="clear"></div>
+                            <div class="processfullname" style="background: none;color: #266085;margin-left: 50px;max-width: 350px;">
+                                தீயணைப்பிற்கு பொறுப்பு வகித்த அலுவலர்</div>
+                        </div>
+                    </div>
+                    <div class="submitbtn">
+
+                        <a class="btn btn-Anumathi btn-home smooth-scroll" href="#about" role="button">சமர்ப்பி</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-md">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add/Edit Attributes</h4>
+                    </div>
+                    <div class="modal-body" style="overflow: auto; max-height: 500px;">
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <div>
+                            <div class="iconbutton" data-dismiss="modal">
+                                <input type="button" value="Clear" />
+                                <span class="reset"></span>
+                            </div>
+
+                            <!--<div class="iconbutton" >
+<input type="button" value="Save and New"  />
+<span class="save"></span>
+</div>  -->
+                            <div class="iconbutton">
+                                <input type="button" value="Save" />
+                                <span class="save"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="previewModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="closeSpan">&times;</span>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        var winheight = 0;
+        var topheader = 0;
+        var heading = 0;
+        var headingsec = 0;
+        var gridheight = 0;
+        $(document).ready(function() {
+            var products = [{
+                    ProcessName: "Work Order Preprint",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "Moldering",
+                    Wizardform: "No"
+
+                },
+                {
+                    ProcessName: "Production Record Draft/Final",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "Moldering",
+                    Wizardform: "No"
+                },
+                {
+                    ProcessName: "Start-Up Check List",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "Moldering",
+                    Wizardform: "No"
+                },
+                {
+                    ProcessName: "Line clearance",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "Moldering",
+                    Wizardform: "No"
+                }, {
+                    ProcessName: "Set-Up check/Test Machine",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "Moldering",
+                    Wizardform: "No"
+                },
+                {
+                    ProcessName: "Material Prepared",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "SMT-Edit",
+                    Wizardform: "No"
+                }, {
+                    ProcessName: "Machine Downtime",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "SMT-Edit",
+                    Wizardform: "No"
+                },
+                {
+                    ProcessName: "In Process Visual and Final In",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "SMT-Edit",
+                    Wizardform: "No"
+                }, {
+                    ProcessName: "Scale Standardized",
+                    Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                    Areaname: "SMT-Edit",
+                    Wizardform: "No"
+                }
+            ];
+
+
+            var sectionsname = [{
+                    SectionName: "Section1",
+                    SequenceNo: "1",
+                    DisplayType: "1-Column"
+                }, {
+                    SectionName: "Section2",
+                    SequenceNo: "2",
+                    DisplayType: "2-Column"
+                },
+                {
+                    SectionName: "Section3",
+                    SequenceNo: "3",
+                    DisplayType: "Tabular"
+                },
+                {
+                    SectionName: "Section4",
+                    SequenceNo: "4",
+                    DisplayType: "1-Column"
+                }
+            ];
+
+            $("#grid2").kendoGrid({
+                dataSource: {
+                    data: sectionsname,
+                    pageSize: 5,
+                    schema: {
+                        model: {
+                            id: "GroupID",
+                            fields: {
+                                GroupID: {
+                                    type: "number"
+                                },
+                                SectionName: {
+                                    type: "string"
+                                },
+                                SequenceNo: {
+                                    type: "number"
+                                },
+                                DisplayType: {
+                                    type: "string"
+                                },
+                            }
+                        }
+                    }
+
+                },
+                pageable: true,
+                // toolbar: ["create"],
+                /*toolbar: [{
+                    text: "Create",
+                    template: "<button class=\"buttonlarge k-grid-add\" title=\"Add Section\"><i class=\"fa fa-plus-circle\"></i></button>"
+                }],*/
+
+                // toolbar: [{ name: "create", template: '<button class="buttonlarge k-grid-add" title="Add New"><i class="fa fa-pencil" ></i></button>'}],
+                columns: [{
+                        field: "GroupID",
+                        hidden: true
+                    },
+                    {
+                        field: "SectionName",
+                        title: "Section Name"
+                    },
+                    {
+                        field: "SequenceNo",
+                        title: "Sequence No"
+                    },
+                    {
+                        field: "DisplayType",
+                        title: "Display Type"
+                    },
+                    //  { command: ["edit", "destroy"], title: "Action", width: "250px" }],
+                    {
+                        command: [{
+                            name: "edit",
+                            template: "<a class=\"k-grid-edit buttonlarge\" title=\"Edit\" style=\"margin:5px;padding:3px;\"><i class=\"fa fa-pencil-square-o\"></i></a>"
+                        }, {
+                            text: "Delete",
+                            template: "<a class=\"k-grid-delete buttonlarge\" style='margin:5px;margin-left:10px;padding:3px;' title=\"Delete\"><i class=\"fa fa-trash\"></i></a>"
+                        }],
+                        title: "Action"
+                    }
+                ],
+                height: 380,
+                editable: "inline",
+                edit: function(e) {
+                    var commandCell = e.container.find("td:last");
+                    commandCell.html('<a class=\"k-grid-update buttonlarge\" title=\"Save\" style="margin:5px;padding:3px;"><i class=\"fa fa-floppy-o\"></i></a><a class=\"k-grid-cancel buttonlarge\" title=\"Cancel\"  style="margin:5px;margin-left:10px;padding:3px;" ><i class=\"fa fa-times\"></i></a>');
+                }
+            });
+            var grid2 = $("#grid2").data("kendoGrid");
+            $("#addrow1").click(function() {
+                grid2.addRow();
+            })
+
+            $('#attributelist').DataTable({
+                "scrollX": "100%",
+                "scrollY": "300px"
+            });
+            $('#datetimepicker1').datetimepicker();
+            $('#datetimepicker2').datetimepicker({
+                format: 'LT'
+            });
+            $('#datetimepicker3').datetimepicker({
+                format: 'LT'
+            });
+            $(".menubtn").click(function() {
+                value = $('#sidebar').css('left') === '0px' ? '-250px' : 0;
+                marvalue = $('#content').css('margin-left') === '250px' ? '0' : '250px';
+                $('#sidebar').animate({
+                    left: value
+                });
+                $('#content').animate({
+                    marginLeft: marvalue
+                });
+
+            });
+            $("#usersetting").click(function() {
+                $('#userprof').fadeToggle();
+            });
+            $("#settingicon").click(function() {
+                $('#settingdropdown1').fadeToggle();
+            });
+
+            $("#mailicon").click(function() {
+                $('#maildropdown').fadeToggle();
+            });
+
+
+            $(".processpreview").click(function() {
+                $('#previewprocess').show();
+                $('#inputsection').hide();
+            });
+            $(".viewedhr").click(function() {
+                $('#eDHRdetails').show();
+                $('#inputsection').hide();
+            });
+            /* $("#manualattribute").kendoMobileSwitch({
+                    onLabel: "YES",
+                    offLabel: "NO"
+                });*/
+
+            $("#checkbox1").kendoMobileSwitch({
+                onLabel: "YES",
+                offLabel: "NO"
+            });
+            $("#checkbox2").kendoMobileSwitch({
+                onLabel: "YES",
+                offLabel: "NO"
+            });
+            $("#checkbox3").kendoMobileSwitch({
+                onLabel: "YES",
+                offLabel: "NO"
+            });
+            $("#checkbox4").kendoMobileSwitch({
+                onLabel: "YES",
+                offLabel: "NO"
+            });
+            $("#checkbox5").kendoMobileSwitch({
+                onLabel: "ஆம்",
+                offLabel: "இல்லை"
+            });
+            $("#checkbox6").kendoMobileSwitch({
+                onLabel: "ஆம்",
+                offLabel: "இல்லை"
+            });
+
+            $('#accordion').slimScroll({
+                height: '100%',
+                color: '#ccc',
+                railVisible: true,
+                railColor: '#000'
+            });
+            $(".showeditdiv").click(function() {
+                $('#inputsection').show();
+                $('.gridcontent').hide();
+                $('#previewprocess').hide();
+                $('#eDHRdetails').hide();
+            });
+            $(".showgriddiv").click(function() {
+                $('.gridcontent').show();
+                $('#inputsection').hide();
+                $('#previewprocess').hide();
+                $('#eDHRdetails').hide();
+            });
+
+            $("#optional").kendoListBox({
+                connectWith: "selected",
+                selectable: "multiple",
+                toolbar: {
+                    tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom"]
+                }
+            });
+
+            $("#selected").kendoListBox({
+                connectWith: "optional",
+                selectable: "multiple",
+                toolbar: {
+                    tools: ["moveUp", "moveDown"]
+                }
+            });
+
+            $("#optional1").kendoListBox({
+                connectWith: "selected1",
+                selectable: "multiple",
+                toolbar: {
+                    tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom"]
+                }
+            });
+
+            $("#selected1").kendoListBox({
+                connectWith: "optional1",
+                selectable: "multiple",
+                toolbar: {
+                    tools: ["moveUp", "moveDown"]
+                }
+            });
+
+            $("#dependent").kendoListBox({
+                connectWith: "notdependent",
+                selectable: "multiple",
+                toolbar: {
+                    tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom"]
+                }
+            });
+
+            $("#notdependent").kendoListBox({
+                connectWith: "dependent",
+                selectable: "multiple",
+                toolbar: {
+                    tools: ["moveUp", "moveDown"]
+                }
+            });
+
+
+            $(document).on("click", function(event) {
+                var $trigger = $('#sidebar');
+                if ($trigger !== event.target && !$trigger.has(event.target).length) {
+                    if ($('#sidebar').css('left') == "0px" && $('#content').css('margin-left') == "0px")
+                        $('#sidebar').animate({
+                            left: '-250px'
+                        });
+
+                }
+            });
+
+            var gridElement = $(".grid1");
+
+            function resizeGrid() {
+                gridElement.css("height", gridheight);
+                gridElement.data("kendoGrid").resize();
+            }
+            $(window).resize(function() {
+
+                /* if($('#content').css('margin-left')=="250px")
+                {*/
+
+                /* $('#sidebar').css('left',"0px");*/
+
+                winheight = window.innerHeight;
+                topheader = $('header').height();
+                heading = $('.heading').height();
+                headingsec = $('.headingsection').height();
+                gridheight = winheight - (topheader + heading + headingsec + 40) + 'px';
+                /*alert(winheight)*/
+                $('#content').css('height', winheight - (topheader + 1) + 'px');
+                $("#sidebar").css("height", winheight - (topheader + 1) + 'px');
+                $(".gridinner").css("height", gridheight);
+
+                resizeGrid();
+                /* }
+                resizeGrid();*/
+
+            });
+            winheight = window.innerHeight;
+            topheader = $('header').height();
+            heading = $('.heading').height();
+            headingsec = $('.headingsection').height();
+            gridheight = winheight - (topheader + heading + headingsec + 40) + 'px';
+            /*alert(winheight)*/
+            $('#content').css('height', winheight - (topheader + 1) + 'px');
+            $("#sidebar").css("height", winheight - (topheader + 1) + 'px');
+            $(".gridinner").css("height", gridheight);
+
+
+
+            $('#attributeselect').hide();
+            $('#attributetext').show();
+
+            $(".grid1").kendoGrid({
+                dataSource: {
+                    data: products,
+                    schema: {
+                        model: {
+                            fields: {
+                                ProcessName: {
+                                    type: "string"
+                                },
+                                Description: {
+                                    type: "string"
+                                },
+                                Areaname: {
+                                    type: "string"
+                                },
+                                Wizardform: {
+                                    type: "string"
+                                }
+                            }
+                        }
+                    },
+                    pageSize: 20
+                },
+                sortable: true,
+                scrollable: true,
+                reorderable: true,
+                /*  groupable: true,*/
+                resizable: true,
+                filterable: true,
+                /*filterable: {
+                    mode: "row"
+                },*/
+                columnMenu: false,
+                pageable: true,
+                height: gridheight,
+                columns: [{
+                        selectable: true,
+                        width: "50px",
+                        locked: false,
+                        lockable: false
+                    },
+                    {
+                        field: "ProcessName",
+                        title: "Process Name",
+                        width: 200,
+                        locked: false,
+                    },
+                    {
+                        field: "Description",
+                        title: "Description",
+                        width: 350
+                    },
+
+                    {
+                        field: "Areaname",
+                        title: "Area Name",
+                        width: 150
+                    },
+                    {
+                        field: "Wizardform",
+                        title: "Wizard Type",
+                        width: 70
+                    }
+                ]
+            });
+
+            $(".grid1").delegate("tbody>tr", "dblclick", function() {
+                $('#inputsection').show();
+                $('.gridcontent').hide();
+            });
+            var workflowname = [{
+                    Role: "Admin",
+                    User: "Magesh Babu S",
+                    SequenceNo: "1"
+                }, {
+                    Role: "Operator",
+                    User: "James",
+                    SequenceNo: "2"
+                },
+                {
+                    Role: "Admin",
+                    User: "Julian",
+                    SequenceNo: "3"
+                },
+                {
+                    Role: "Operator",
+                    User: "Kalyani",
+                    SequenceNo: "4"
+                }
+            ];
+
+            $("#grid3").kendoGrid({
+                dataSource: {
+                    data: workflowname,
+                    pageSize: 5,
+                    schema: {
+                        model: {
+                            id: "GroupID",
+                            fields: {
+                                GroupID: {
+                                    type: "number"
+                                },
+                                Role: {
+                                    type: "string"
+                                },
+                                User: {
+                                    type: "string"
+                                },
+                                SequenceNo: {
+                                    type: "number"
+                                }
+                            }
+                        }
+                    }
+
+                },
+                pageable: true,
+                // toolbar: ["create"],
+                /* toolbar: [{
+                    text: "Create",
+                    template: "<button class=\"buttonlarge k-grid-add\" title=\"Add Section\"><i class=\"fa fa-plus-circle\"></i></button>"
+                }],*/
+
+                // toolbar: [{ name: "create", template: '<button class="buttonlarge k-grid-add" title="Add New"><i class="fa fa-pencil" ></i></button>'}],
+                columns: [{
+                        field: "GroupID",
+                        hidden: true
+                    },
+                    {
+                        field: "Role",
+                        title: "Role"
+                    },
+                    {
+                        field: "User",
+                        title: "User"
+                    },
+                    {
+                        field: "SequenceNo",
+                        title: "Sequence No"
+                    },
+
+
+                    //  { command: ["edit", "destroy"], title: "Action", width: "250px" }],
+                    {
+                        command: [{
+                            name: "edit",
+                            template: "<a class=\"k-grid-edit buttonlarge\" title=\"Edit\" style=\"margin:5px;padding:3px;\"><i class=\"fa fa-pencil-square-o\"></i></a>"
+                        }, {
+                            text: "Delete",
+                            template: "<a class=\"k-grid-delete buttonlarge\" style='margin:5px;margin-left:10px;padding:3px;' title=\"Delete\"><i class=\"fa fa-trash\"></i></a>"
+                        }],
+                        title: "Action"
+                    }
+                ],
+                height: 380,
+                editable: "inline",
+                edit: function(e) {
+                    var commandCell = e.container.find("td:last");
+                    commandCell.html('<a class=\"k-grid-update buttonlarge\" title=\"Save\" style="margin:5px;padding:3px;"><i class=\"fa fa-floppy-o\"></i></a><a class=\"k-grid-cancel buttonlarge\" title=\"Cancel\"  style="margin:5px;margin-left:10px;padding:3px;" ><i class=\"fa fa-times\"></i></a>');
+                }
+            });
+
+            var grid = $("#grid3").data("kendoGrid");
+            $("#addrow").click(function() {
+                grid.addRow();
+            })
+
+            $(document).on('change', ':file', function() {
+                var input = $(this),
+                    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [numFiles, label]);
+            });
+            $(':file').on('fileselect', function(event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+
+
+
+        });
+        showonlyone(1);
+
+        function showonlyone(id) {
+            $('section.wizardtype').hide();
+            $('section.wizardtype').each(function(index) {
+                if ($(this).attr("id") == "page" + id) {
+                    $("#page" + id).show();
+                }
+            });
+        }
+
+        $("#edhrdetailsgrid").kendoGrid({
+            sortable: true,
+            scrollable: true,
+            resizable: true,
+            height: 400
+        });
+
+        /* $("#manualattribute").data("kendoMobileSwitch").bind("change", function(e) {
+                    if(e.checked)
+                    {
+                        // alert("3242342")
+                        $('#attributeselect').show();
+                        $('#attributetext').hide();
+                        $('#displayname').attr("readonly","readonly");
+                        $('#maxtextlen').attr("readonly","readonly");
+                        /* $('#refpicklist').attr("readonly","readonly");
+                        $('#datatype').attr("disabled","disabled");
+                        $('#desc').attr("disabled","disabled");
+
+                    }
+                    else
+                    {
+                        $('#attributeselect').hide();
+                        $('#attributetext').show();
+
+                        $('#maxtextlen').removeAttr("readonly");
+                        $('#displayname').removeAttr("readonly");
+                        /* $('#refpicklist').attr("readonly");
+                        $('#datatype').removeAttr("disabled");
+                        $('#desc').removeAttr("disabled");
+
+                    }
+                });*/
+        /* if($('#manualattribute').prop('checked'))
+            {
+                alert("3242342")
+                $('#attributeselect').hide();
+                $('#attributetext').show();
+            }
+            else
+            {
+                $('#attributeselect').show();
+                 $('#attributetext').hide();
+            }*/
+        /*function checkradio()
+        {        
+            //alert($('#manualattribute').prop('checked'))
+            if($('#manualattribute').prop('checked'))
+            {
+                $('#attributeselect').hide();
+                $('#attributetext').show();
+                $('#displayname').removeAttr("readonly");
+                $('#maxtextlen').removeAttr("readonly");
+                $('#refpicklist').attr("readonly");
+                $('#datatype').removeAttr("disabled");
+                $('#desc').removeAttr("disabled");
+            }
+            else
+            {
+                $('#attributeselect').show();
+                $('#attributetext').hide();
+                $('#displayname').attr("readonly","readonly");
+                $('#maxtextlen').attr("readonly","readonly");
+                $('#refpicklist').attr("readonly","readonly");
+                $('#datatype').attr("disabled","disabled");
+                $('#desc').attr("disabled","disabled");
+            }
+
+        }*/
+
+        var childForThiruvarur = [{
+                ID: 1,
+                Name: "திருவாரூர் "
+            },
+            {
+                ID: 2,
+                Name: "மன்னார்குடி "
+            },
+            {
+                ID: 3,
+                Name: "நன்னிலம்"
+            },
+            {
+                ID: 4,
+                Name: "நீடாமங்கலம்  "
+            },
+            {
+                ID: 5,
+                Name: "கூத்தாநல்லூர்"
+            },
+            {
+                ID: 6,
+                Name: "வலைங்கைமான் "
+            },
+            {
+                ID: 7,
+                Name: "குடவாசல் "
+            },
+            {
+                ID: 8,
+                Name: "திருத்துறைபூண்டி "
+            },
+            {
+                ID: 9,
+                Name: "கோட்டூர் "
+            },
+            {
+                ID: 10,
+                Name: "முத்துப்பேட்டை "
+            },
+            {
+                ID: 11,
+                Name: "பேரளம்  "
+            },
+            {
+                ID: 12,
+                Name: "திருமக்கோட்டை   "
+            }
+        ];
+        var childForNagapattinam = [{
+                ID: 1,
+                Name: "நாகப்பட்டினம்"
+            },
+            {
+                ID: 2,
+                Name: "வேதாரண்யம்"
+            },
+            {
+                ID: 3,
+                Name: "மயிலாடுதுறை "
+            },
+            {
+                ID: 4,
+                Name: "பூம்புகார்"
+            },
+            {
+                ID: 5,
+                Name: "சிர்காழி"
+            },
+            {
+                ID: 6,
+                Name: "கிழ்வளூர் "
+            },
+            {
+                ID: 7,
+                Name: "வேளாங்கன்னி "
+            },
+            {
+                ID: 8,
+                Name: "குத்தாலம்"
+            },
+            {
+                ID: 9,
+                Name: "தரங்கம்பாடி "
+            }
+        ];
+
+        $('#kottamVal').change(function() {
+            debugger;
+            $('#stationVal').empty();
+
+            if ($('#kottamVal').val() == 1) {
+                for (var i = 0; i < childForThiruvarur.length; i++) {
+                    $('#stationVal').append($('<option>', {
+                        value: childForThiruvarur[i].ID,
+                        text: childForThiruvarur[i].Name
+                    }));
+
+                }
+            } else if ($('#kottamVal').val() == 2) {
+                for (var i = 0; i < childForNagapattinam.length; i++) {
+                    $('#stationVal').append($('<option>', {
+                        value: childForNagapattinam[i].ID,
+                        text: childForNagapattinam[i].Name
+                    }));
+
+                }
+
+            }
+
+
+        });
+        $('#fireOfficerName').change(function() {
+            document.getElementById("lastReturnFireOfficer").value = document.getElementById("fireOfficerName").value;
+
+        });
+
+        $('#AllInOnePerson').change(function() {
+            if (this.checked) {
+                document.getElementById("senderName").value = document.getElementById("callingCallerName").value;
+                document.getElementById("ownerNameAndAddress").value = document.getElementById("callingCallerName").value + "," + document.getElementById("callingAccidentAddress").value;
+            } else {
+                document.getElementById("senderName").value = "";
+                document.getElementById("ownerNameAndAddress").value = "";
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        function myFunction() {
+            debugger;
+            sessionStorage.clear();
+            //document.getElementById("checkbox5").text();
+
+            sessionStorage.setItem('Kottam', $("#kottamVal option:selected").text());
+            sessionStorage.setItem('AnnouncementNo', $("#announcementNo").val());
+            sessionStorage.setItem('Station', $("#stationVal option:selected").text());
+            sessionStorage.setItem('AccidentDate', $("#accidentDateVal").val());
+            sessionStorage.setItem('FireOfficerName', $("#fireOfficerName").val());
+
+            sessionStorage.setItem('CallerName', $("#callingCallerName").val());
+            sessionStorage.setItem('TelephoneNo', $("#callingTelephoneNo").val());
+            sessionStorage.setItem('AccidentAddress', $("#callingAccidentAddress").val());
+            sessionStorage.setItem('SenderName', $("#senderName").val());
+            sessionStorage.setItem('CheckBoxValue', $("#AllInOnePerson").is(":checked"));
+            sessionStorage.setItem('CallingsenderJob', $("#callingsenderJob").val());
+            sessionStorage.setItem('OwnerNameAndAddress', $("#ownerNameAndAddress").val());
+            sessionStorage.setItem('CallingTime', $("#callingTime").val());
+            sessionStorage.setItem('VehicleStartedTime', $("#vehicleStartedTime").val());
+            sessionStorage.setItem('VehicleReachedTime', $("#vehicleReachedTime").val());
+            sessionStorage.setItem('BetweenDistance', $("#betweenDistance").val());
+            
+            sessionStorage.setItem('IncidentTime', $("#incidentTime").val());
+            sessionStorage.setItem('DetailAbtFire', $("#detailAbtFire").val());
+            sessionStorage.setItem('ReasonForFire', $("#reasonForFire").val());
+            sessionStorage.setItem('RescueWork', $("#rescueWork").val());
+            
+
+            sessionStorage.setItem('FireaccdHappenedTime', $("#fireaccidentHappenedTime").val());
+            sessionStorage.setItem('SelectedBtn', $("#selectedBtn").text());
+            sessionStorage.setItem('AreaSquareOfFire', $("#areaSquareOfFire").val());
+            sessionStorage.setItem('ReasonForfireAccident', $("#reasonForfireAccident").val());
+            sessionStorage.setItem('FireAccidentdetailList', $("#fireAccidentdetailList").val());
+
+
+            sessionStorage.setItem('FireaccidentThings', $("#fireaccidentThings").val());
+            sessionStorage.setItem('Environtment', $("#environtment").val());
+            sessionStorage.setItem('AccidentPlaceCondition', $("#accidentPlaceConditions").val());
+            sessionStorage.setItem('FirehappenedArea', $("#firehappenedArea").val());
+            sessionStorage.setItem('RescueThingValue', $("#rescueThingValue").val());
+            sessionStorage.setItem('LastReturnFireOfficer', $("#lastReturnFireOfficer").val());
+            sessionStorage.setItem('ReturnDateTimeFromFireAccident', $("#ReturnDateTimeFromFireAccident").val());
+            sessionStorage.setItem('FireControllingTime', $("#fireControllingTime").val());
+
+            sessionStorage.setItem('CheckBoxValue5', $("#checkbox5").is(":checked"));
+            sessionStorage.setItem('Male1', $("#male1").val());
+            sessionStorage.setItem('Male2', $("#male2").val());
+            sessionStorage.setItem('Male3', $("#male3").val());
+            sessionStorage.setItem('Female1', $("#female1").val());
+            sessionStorage.setItem('Female2', $("#female2").val());
+            sessionStorage.setItem('Female3', $("#female3").val());
+
+            sessionStorage.setItem('CheckBoxValue6', $("#checkbox6").is(":checked"));
+            sessionStorage.setItem('Vmale1', $("#Vmale1").val());
+            sessionStorage.setItem('VFemale1', $("#VFemale1").val());
+            sessionStorage.setItem('Vmale2', $("#Vmale2").val());
+            sessionStorage.setItem('VFemale2', $("#VFemale2").val());
+            sessionStorage.setItem('Vmale3', $("#Vmale3").val());
+            sessionStorage.setItem('VFemale3', $("#VFemale3").val());
+            sessionStorage.setItem('Vmale4', $("#Vmale4").val());
+            sessionStorage.setItem('VFemale4', $("#VFemale4").val());
+
+            sessionStorage.setItem('Otherdetail', $("#otherdetail").val());
+
+
+            window.location.href = "ThanipaniPreview.html";
+
+        }
+    </script>
+</body>
+
+</html>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker2').datetimepicker({
+            format: 'LT'
+        });
+        $('#datetimepicker3').datetimepicker({
+            format: 'LT'
+        });
+    });
+</script>

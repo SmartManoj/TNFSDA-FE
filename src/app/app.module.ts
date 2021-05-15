@@ -11,13 +11,15 @@ import { MatInputModule } from '@angular/material/input'
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import {CommonService} from './Service/CommonService';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule} from '@angular/common/http';
+import { ThanipaniComponent } from './thanipani/thanipani.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
+    ThanipaniComponent,
     
   ],
   imports: [

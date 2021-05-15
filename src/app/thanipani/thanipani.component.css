@@ -1,0 +1,405 @@
+/* @import url("../../assets/OldTheevibathu/css/style.css"); */
+@import url("../../assets/OldTheevibathu/css/bootstrap.min.css");
+
+ /* @import url("../../assets/OldTheevibathu/scripts/jquery-1.10.2.js");
+    @import url("../../assets/OldTheevibathu/scripts/bootstrap.min.js"); */
+
+/* @import url("../../assets/OldTheevibathu/scripts/DataTables-1.10.11/css/dataTables.bootstrap.min.css");
+@import url("../../assets/OldTheevibathu/css/bootstrap-toggle.min.css");
+@import url("../../assets/OldTheevibathu/scripts/bootstrap-datetimepicker.min.css");
+@import url("../../assets/OldTheevibathu/scripts/fileinput.min.css");
+@import url("../../assets/OldTheevibathu/scripts/bootstrap-duallistbox-master/src/bootstrap-duallistbox.css");
+@import url("../../assets/OldTheevibathu/font-awesome/css/font-awesome.css" );
+@import url("../../assets/OldTheevibathu/styles/kendo.common-nova.min.css");
+@import url("../../assets/OldTheevibathu/styles/kendo.nova.min.css");
+@import url("../../assets/OldTheevibathu/styles/kendo.nova.mobile.min.css"); */
+
+
+
+
+/* ForThanipani */
+.k-grid {
+    border-color: #bbb;
+}
+
+.k-edge .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-ff .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-ie11 .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-safari .k-pager-numbers.k-state-expanded .k-current-page .k-link,
+.k-webkit .k-pager-numbers.k-state-expanded .k-current-page .k-link {
+    background-color: #09abdd;
+    border-color: #09abdd;
+}
+
+.k-edge .k-pager-wrap .k-pager-numbers .k-state-selected,
+.k-ff .k-pager-wrap .k-pager-numbers .k-state-selected,
+.k-ie11 .k-pager-wrap .k-pager-numbers .k-state-selected,
+.k-safari .k-pager-wrap .k-pager-numbers .k-state-selected,
+.k-webkit .k-pager-wrap .k-pager-numbers .k-state-selected {
+    background-color: #09abdd;
+    border-color: #09abdd;
+}
+
+.k-autocomplete.k-state-active,
+.k-dropdown-wrap.k-state-active,
+.k-multiselect.k-header.k-state-active,
+.k-numeric-wrap.k-state-active,
+.k-picker-wrap.k-state-active {
+    background-color: #09abdd;
+    border-color: #09abdd;
+}
+
+.k-grid-footer,
+.k-grid-footer td,
+.k-grid-header,
+.k-grid-header .k-header,
+.k-pager-numbers .k-state-selected,
+.k-pager-wrap,
+.k-scheduler-header,
+.km-pane-wrapper .k-grid-header .k-header {
+    border-color: #777;
+}
+
+.k-button.k-state-active,
+.k-button:active {
+    background-color: #09abdd;
+    border-color: #09abdd;
+}
+
+.k-button.k-state-focused,
+.k-button:focus {
+    border-color: #09abdd;
+}
+
+.k-popup .k-list .k-state-selected {
+    background-color: #09abdd;
+    border-color: #09abdd;
+}
+
+.k-popup .k-list .k-state-selected.k-state-focused {
+    background-color: #09abdd;
+    border-color: #09abdd;
+}
+
+.k-grid-header .k-i-sort-asc-sm,
+.k-grid-header .k-i-sort-asc-sm:hover,
+.k-grid-header .k-i-sort-desc-sm,
+.k-grid-header .k-i-sort-desc-sm:hover,
+.k-grid-header .k-sort-order {
+    color: #fff;
+}
+
+.k-pager-wrap .k-icon,
+.k-pager-wrap>.k-link>.k-icon {
+    margin-top: 2px;
+}
+
+.k-pager-numbers .k-state-selected {
+    color: #fff;
+    line-height: 1.429em;
+}
+
+.k-listbox .k-item {
+    border: 0;
+    border-bottom: 1px solid #eee;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.k-grid-header th.k-header>.k-link {
+    font-weight: bold;
+    color: #fff;
+}
+
+.k-grid-footer,
+.k-grid-footer td,
+.k-grid-header,
+.k-grid-header .k-header,
+.k-pager-numbers .k-state-selected,
+.k-scheduler-header,
+.km-pane-wrapper .k-grid-header .k-header {
+    background: #1f2f3e;
+}
+
+.k-filter-row {
+    background: #D3D3D3;
+}
+
+.k-filter-row .k-widget {
+    height: 24px;
+}
+
+.k-filter-row input[type=text] {
+    height: 22px;
+}
+
+.k-filter-row .k-dropdown-operator {
+    width: 20px;
+}
+
+.k-filter-row .k-dropdown-wrap .k-input {
+    height: 22px;
+    line-height: 22px;
+    padding: 0;
+}
+
+.k-pager-wrap .k-link {
+    height: 1.429em;
+    line-height: 1.429em;
+    color: #999;
+}
+
+.k-filter-row th {
+    padding: .0em .6em .0em 1.286em;
+}
+
+.k-grid .k-filter-row:hover {
+    background: #D3D3D3;
+}
+
+.k-button-icon,
+.k-split-button-arrow {
+    padding: 0 !important;
+    height: -webkit-calc(1.143em + (2*5px) + 2px);
+    height: calc(1.143em + (2*5px) + 2px);
+    width: -webkit-calc(1.143em + (2*5px) + 2px);
+    width: calc(1.143em + (2*5px) + 2px);
+}
+
+.k-dropdown-wrap {
+    padding: 0 1.9em 0 0;
+}
+
+.k-dropdown-wrap .k-select {
+    padding-top: 2px;
+    width: 24px;
+    height: 20px;
+    min-height: 16px;
+    line-height: 16px;
+}
+
+.k-checkbox:checked+.k-checkbox-label:before {
+    color: #09abdd;
+
+}
+
+.k-checkbox-label:active:before,
+.k-checkbox:active+.k-checkbox-label:before {
+    border-color: #09abdd !important;
+}
+
+.k-checkbox:checked+.k-checkbox-label:active:before,
+.k-checkbox:checked:active+.k-checkbox-label:before {
+    border-color: #09abdd !important;
+}
+
+.k-checkbox:focus+.k-checkbox-label:before,
+.k-checkbox:focus+.k-checkbox-label:hover:before {
+    border-color: #09abdd !important;
+}
+
+.k-grid .k-icon {
+    opacity: 1;
+}
+
+.k-popup .k-list .k-item {
+    color: #000;
+}
+
+.k-menu .k-state-hover .k-link.k-state-active {
+    background: #eee;
+    color: #000;
+}
+
+.k-menu .k-item>.k-state-active {
+    background: #eee;
+    color: #000;
+}
+
+.k-menu .k-popup .k-item {
+    color: #000;
+}
+
+input.k-textbox:active {
+    border-color: #09abdd;
+}
+
+.k-edit-form-container .k-primary,
+.k-filter-menu .k-primary {
+    color: #000;
+}
+
+.km-switch-background,
+.km-switch-handle {
+    color: #09abdd;
+}
+
+.km-switch-off .km-switch-handle {
+    box-shadow: none;
+}
+
+.km-switch-container,
+.km-switch-wrapper {
+    background: #09abdd;
+}
+
+.readonlyswitch .km-state-disabled {
+    opacity: 1;
+    cursor: not-allowed !important;
+}
+
+.k-numeric-wrap:before {
+    content: none;
+}
+
+.k-grid-content .k-button,
+.k-grid-toolbar .k-button {
+    background-color: #09abdd;
+    border-color: #09abdd;
+    color: #000;
+}
+
+.k-grid-content .k-button-icontext:active,
+.k-grid-toolbar .k-button:active {
+    background-color: #09abdd;
+    border-color: #09abdd;
+
+}
+
+.k-grid-header th.k-header {
+    font-weight: bold;
+    color: #fff;
+    padding: 0.6em;
+}
+
+.k-grid .k-numeric-wrap .k-link.k-state-selected,
+.k-numeric-wrap .k-link.k-state-selected {
+    background-color: #09abdd;
+}
+
+.k-numeric-wrap.k-state-disabled .k-input {
+    cursor: not-allowed;
+    background-color: #eeeeee;
+    color: #999;
+}
+
+.k-numerictextbox .k-link {
+    height: 1.12em;
+}
+
+.k-dropzone em,
+.k-slider .k-draghandle,
+.k-state-disabled,
+.k-state-disabled .k-link,
+.k-tile-empty strong {
+    color: #999;
+    background-color: #eeeeee;
+}
+
+.k-pager-info {
+    padding: 0 1.333em 0 1.333em;
+}
+
+/**********kendo nova css ****************/
+.k-listbox .k-item.k-state-selected {
+    background-color: #E1F1F0;
+    border-bottom: 1px solid #999;
+    border-left: 0;
+    border-right: 0;
+    color: #000;
+}
+
+.k-listbox .k-item:hover {
+    cursor: pointer;
+}
+
+.k-listbox .k-item.k-state-selected:hover {
+    background-color: #E1F1F0;
+}
+
+.k-grid .k-alt {
+    background-color: #f5f6f6;
+}
+
+.k-grid td {
+    padding: .4em .6em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.k-listbox .k-item.k-state-disabled {
+    border-bottom: 1px solid #fff;
+    background: #eee;
+    color: #555;
+    cursor: not-allowed !important;
+}
+
+@font-face {
+    font-family: myTamilFont;
+    src: url('../../assets/fonts/fonts/ismail_0.ttf');
+}
+
+input {
+    font-family: myTamilFont;
+}
+
+.tamilClass {
+    font-family: myTamilFont;
+}
+
+ /* The Modal (background) */
+ .modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.closeSpan {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeSpan:hover,
+.closeSpan:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+

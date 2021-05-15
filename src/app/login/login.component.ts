@@ -17,6 +17,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
   }
+  login()
+  {
+    this.route.navigate(['/thanipani']);
+  }
   post()
   {
 

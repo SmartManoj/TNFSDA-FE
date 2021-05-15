@@ -1,0 +1,252 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <script src="scripts/jquery-1.10.2.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>தமிழ்நாடு தீயணைப்பு துறை</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/fireicon.jpg">
+    <style>
+        @font-face {
+            font-family: myTamilFont;
+            src: url(fonts/ismail_0.ttf);
+        }
+
+        span {
+            font-family: myTamilFont;
+        }
+
+        .tamilClass {
+            font-family: myTamilFont;
+        }
+
+        h5 {
+            color: #09abdd;
+        }
+
+        .subheading {
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div style="width:100%; text-align: right;font-size:10px;">
+        <span style=" padding:10px;">T.N.F.S. 25 - 90,000 Cps.-GBP., Vdm.-2015</span>
+    </div>
+    <div class="width100p">
+        <img src="images/fireacc.jpg" style="float:left" width="80">
+
+    </div>
+    <h4 style="text-align:center; padding-top:5px;padding-right:100px;font-weight: 600;">தமிழ்நாடு தீயணைப்பு மீட்புப் பணிகள் துறை</h4>
+    <h4 style="text-align:center; padding-top:5px;padding-right:100px;font-weight: 600;">தம் நிலையத்தை விட்டு செல்லும் பணியாளர்களின் கடவுச் சீட்டு</h4>
+    <h5 style="text-align:center; padding-top:5px;padding-right:10px;font-weight: 600;">படிவம் எண் 31, ஆணை எண் 202(6)</h5>
+    <div style="clear:both;"></div>
+    <br />
+    
+
+
+    <section>
+        
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:90%;height:50%;">
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> பதவி எண்: </span>
+                    <span style="color: blue"  id=prevPathaviEn></span>
+
+                </div>
+               
+
+            </div> <div class="col-md-12">
+                
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> பெயர்: </span>
+                    <span style="color: blue"  id=prevPeyar></span>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> நிலையத்தை விட்டுச் சென்ற நாளும் நேரமும்: </span>
+                    <span style="color: blue"  id=prevLeavingTime2></span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> எங்கு, எதற்காக செல்கிறார் என்பது : </span>
+                    <span style="color: blue"  id=prevWherewhy2></span>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;">அலுவலில் சேருவது பற்றிய அறிவுரைகள் :
+                    </span><span style="color: blue"  id=prevAdvices></span>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> பிற அறிவுரைகள் எவையேனும் இருந்தால் :
+                    </span><span style="color: blue"  id=prevOtheradvices></span>
+                </div>
+
+            </div>
+
+         
+        </div>
+    </section>
+
+
+    <section>
+        <div class="col-md-12" subheading style="padding:15px;">
+            <h5><strong><u>இப்பணியாளர் எவர் முன் அறிவித்துக் கொள்கிறாரோ அவ்வலுவலரால் நிரப்பப் பெற வேண்டியது:</u></strong></h5>
+        </div>
+
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:90%;height:25%;">
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> அறிவித்துக் கொள்ளும் நாளும் நேரமும்:  </span>
+                    <span style="color: blue"  id=prevReportTime></span>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> சொந்த நிலையத்திற்கு திரும்ப செல்வதற்கு விடுவிக்கப்பட்ட நாளும் நேரமும்: </span>
+                    <span style="color: blue"  id=prevReturnToOffice2></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div style="clear:both"></div> <br />
+    
+    <div style="clear:both"></div> <br />
+    <div style="border-bottom:double #000000;">&nbsp;</div>
+    <!-- <table border="0" style=" border-collapse: collapse; position: absolute; bottom: 0;left:0;" width="100%">
+        <tr>
+            <td style="font-size:10px;padding:5px;">
+                <Span>T.N.F.S. 25.</Span>
+            </td>
+        </tr>
+    </table> -->
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        debugger;
+
+        //document.getElementById("prevKottamVal").innerHTML = sessionStorage.getItem("Kottam");
+       // document.getElementById("prevAnnouncementNo").innerHTML = sessionStorage.getItem("AnnouncementNo");
+       // document.getElementById("prevStationVal").innerHTML = sessionStorage.getItem("Station");
+      //  document.getElementById("prevAccidentDateVal").innerHTML = sessionStorage.getItem("AccidentDate");
+        //document.getElementById("prevFireOfficerName").innerHTML = sessionStorage.getItem("FireOfficerName");
+
+       // document.getElementById("prevCallerName").innerHTML = sessionStorage.getItem("CallerName");
+        
+        //passport
+        document.getElementById("prevPathaviEn").innerHTML = sessionStorage.getItem("PathaviEn");
+        document.getElementById("prevPeyar").innerHTML = sessionStorage.getItem("Peyar");
+        document.getElementById("prevAdvices").innerHTML = sessionStorage.getItem("Advices");
+        document.getElementById("prevOtheradvices").innerHTML = sessionStorage.getItem("Otheradvices");
+        document.getElementById("prevReportTime").innerHTML = sessionStorage.getItem("ReportTime");
+        
+        document.getElementById("prevLeavingTime2").innerHTML = sessionStorage.getItem("LeavingTime2");
+        document.getElementById("prevWherewhy2").innerHTML = sessionStorage.getItem("Wherewhy2");
+        document.getElementById("prevReturnToOffice2").innerHTML = sessionStorage.getItem("ReturnToOffice2");
+        
+        /*
+        document.getElementById("prevTelephoneNo").innerHTML = sessionStorage.getItem("TelephoneNo");
+        document.getElementById("prevAccidentAddress").innerHTML = sessionStorage.getItem("AccidentAddress");
+
+        var isTrueFalse = sessionStorage.getItem("CheckBoxValue");
+        if (isTrueFalse == "true") {
+            document.getElementById("prevAllInOnePerson").checked = isTrueFalse;
+        }
+
+        document.getElementById("prevSenderName").innerHTML = sessionStorage.getItem("SenderName");
+        document.getElementById("prevCallingsenderJob").innerHTML = sessionStorage.getItem("CallingsenderJob");
+        document.getElementById("prevOwnerNameAndAddress").innerHTML = sessionStorage.getItem("OwnerNameAndAddress");
+        document.getElementById("prevCallingTime").innerHTML = sessionStorage.getItem("CallingTime");
+        document.getElementById("prevVehicleStartedTime").innerHTML = sessionStorage.getItem("VehicleStartedTime");
+        document.getElementById("prevVehicleReachedTime").innerHTML = sessionStorage.getItem("VehicleReachedTime");
+        document.getElementById("prevBetweenDistance").innerHTML = sessionStorage.getItem("BetweenDistance");
+
+
+        document.getElementById("prevFireaccdHappenedTime").innerHTML = sessionStorage.getItem("FireaccdHappenedTime");
+        document.getElementById("prevSelectedBtn").innerHTML = sessionStorage.getItem("SelectedBtn");
+        document.getElementById("prevAreaSquareOfFire").innerHTML = sessionStorage.getItem("AreaSquareOfFire");
+        document.getElementById("prevReasonForfireAccident").innerHTML = sessionStorage.getItem("ReasonForfireAccident");
+        document.getElementById("prevFireAccidentdetailList").innerHTML = sessionStorage.getItem("FireAccidentdetailList");
+
+        document.getElementById("prevFireaccidentThings").innerHTML = sessionStorage.getItem("FireaccidentThings");
+        document.getElementById("prevEnvirontment").innerHTML = sessionStorage.getItem("Environtment");
+        document.getElementById("prevAccidentPlaceCondition").innerHTML = sessionStorage.getItem("AccidentPlaceCondition");
+        document.getElementById("prevFirehappenedArea").innerHTML = sessionStorage.getItem("FirehappenedArea");
+        document.getElementById("prevRescueThingValue").innerHTML = sessionStorage.getItem("RescueThingValue");
+        document.getElementById("prevLastReturnFireOfficer").innerHTML = sessionStorage.getItem("LastReturnFireOfficer");
+        document.getElementById("prevReturnDateTimeFromFireAccident").innerHTML = sessionStorage.getItem("ReturnDateTimeFromFireAccident");
+        document.getElementById("prevFireControllingTime").innerHTML = sessionStorage.getItem("FireControllingTime");
+
+        var isCheckBoxTrueFalse = sessionStorage.getItem("CheckBoxValue5");
+        if (isCheckBoxTrueFalse == "true") {
+            document.getElementById("prevCheckBox5").checked = isCheckBoxTrueFalse;
+            document.getElementById("prevSpanValue").innerHTML = "ஆம்"
+        }
+        else {
+            document.getElementById("prevSpanValue").innerHTML = "இல்லை"
+        }
+        document.getElementById("prevMale1").innerHTML = sessionStorage.getItem("Male1");
+        document.getElementById("prevMale2").innerHTML = sessionStorage.getItem("Male2");
+        document.getElementById("prevMale3").innerHTML = sessionStorage.getItem("Male3");
+        document.getElementById("prevFemale1").innerHTML = sessionStorage.getItem("Female1");
+        document.getElementById("prevFemale2").innerHTML = sessionStorage.getItem("Female2");
+        document.getElementById("prevFemale3").innerHTML = sessionStorage.getItem("Female3");
+
+        var isCheckBoxTrueFalses = sessionStorage.getItem("CheckBoxValue6");
+        if (isCheckBoxTrueFalses == "true") {
+            document.getElementById("prevCheckBox6").checked = isCheckBoxTrueFalses;
+            document.getElementById("prevVipathuSpanValue").innerHTML = "ஆம்"
+        }
+        else {
+            document.getElementById("prevVipathuSpanValue").innerHTML = "இல்லை"
+        }
+
+        document.getElementById("prevVmale1").innerHTML = sessionStorage.getItem("Vmale1");
+        document.getElementById("prevVFemale1").innerHTML = sessionStorage.getItem("VFemale1");
+        document.getElementById("prevFVmale2").innerHTML = sessionStorage.getItem("Vmale2");
+        document.getElementById("prevVFemale2").innerHTML = sessionStorage.getItem("VFemale2");
+        document.getElementById("prevVmale3").innerHTML = sessionStorage.getItem("Vmale3");
+        document.getElementById("prevVFemale3").innerHTML = sessionStorage.getItem("VFemale3");
+        document.getElementById("prevVmale4").innerHTML = sessionStorage.getItem("Vmale4");
+        document.getElementById("prevVFemale4").innerHTML = sessionStorage.getItem("VFemale4");
+
+
+        document.getElementById("prevOtherdetail").innerHTML = sessionStorage.getItem("Otherdetail");*/
+    })
+</script>
