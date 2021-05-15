@@ -25,6 +25,21 @@
   <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="assets/css/util.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+    <!--For Thanipani-->
+    
+    <!-- <link rel="stylesheet" href="./assets/OldTheevibathu/css/style.css" />
+    <link rel="stylesheet" href="./assets/OldTheevibathu/css/style.css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="./assets/OldTheevibathu/scripts/DataTables-1.10.11/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/OldTheevibathu/css/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="./assets/OldTheevibathu/scripts/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="./assets/OldTheevibathu/scripts/fileinput.min.css" />
+    <link rel="stylesheet" href="./assets/OldTheevibathu/scripts/bootstrap-duallistbox-master/src/bootstrap-duallistbox.css" />
+    <link href="./assets/OldTheevibathu/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/OldTheevibathu/styles/kendo.common-nova.min.css" />
+    <link rel="stylesheet" href="./assets/OldTheevibathu/styles/kendo.nova.min.css" />
+    <link rel="stylesheet" href="./assets/OldTheevibathu/styles/kendo.nova.mobile.min.css" />
+
 </head>
 <body class="mat-typography">
   <!-- <script src="../src/assets/js/boostrap/bootstrap.min.js"></script> -->
@@ -41,9 +56,863 @@
     <script src="assets/vendor/tilt/tilt.jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script >
-      $('.js-tilt').tilt({
-        scale: 1.1
-      })
-    </script>
+        $('.js-tilt').tilt({
+          scale: 1.1
+        })
+      </script>
+
+    <!-- for thanipani -->
+    <script src="./assets/OldTheevibathu/scripts/jquery-1.10.2.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/bootstrap.min.js"></script>
+    <script src="./assets/OldTheevibathu/js/kendo.all.min.js"></script>
+    <script src="./assets/OldTheevibathu/js/jszip.min.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/fileinput.min.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/moment-develop/moment.js"></script>
+
+    <script src="./assets/OldTheevibathu/scripts/transition.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/collapse.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/DataTables-1.10.11/js/jquery.dataTables.min.js"></script>
+
+    <script src="./assets/OldTheevibathu/scripts/bootstrap-duallistbox-master/src/jquery.bootstrap-duallistbox.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/bootstrap-toggle.min.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/DataTables-1.10.11/js/dataTables.bootstrap.min.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="./assets/OldTheevibathu/scripts/jquery.slimscroll.min.js"></script>
+
+    <!-- for thanipani -->
+<script>
+    var winheight = 0;
+    var topheader = 0;
+    var heading = 0;
+    var headingsec = 0;
+    var gridheight = 0;
+    $(document).ready(function() {
+        var products = [{
+                ProcessName: "Work Order Preprint",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "Moldering",
+                Wizardform: "No"
+  
+            },
+            {
+                ProcessName: "Production Record Draft/Final",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "Moldering",
+                Wizardform: "No"
+            },
+            {
+                ProcessName: "Start-Up Check List",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "Moldering",
+                Wizardform: "No"
+            },
+            {
+                ProcessName: "Line clearance",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "Moldering",
+                Wizardform: "No"
+            }, {
+                ProcessName: "Set-Up check/Test Machine",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "Moldering",
+                Wizardform: "No"
+            },
+            {
+                ProcessName: "Material Prepared",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "SMT-Edit",
+                Wizardform: "No"
+            }, {
+                ProcessName: "Machine Downtime",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "SMT-Edit",
+                Wizardform: "No"
+            },
+            {
+                ProcessName: "In Process Visual and Final In",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "SMT-Edit",
+                Wizardform: "No"
+            }, {
+                ProcessName: "Scale Standardized",
+                Description: "This section will show the number of pages regarding the workflows added on this catalog,",
+                Areaname: "SMT-Edit",
+                Wizardform: "No"
+            }
+        ];
+  
+  
+        var sectionsname = [{
+                SectionName: "Section1",
+                SequenceNo: "1",
+                DisplayType: "1-Column"
+            }, {
+                SectionName: "Section2",
+                SequenceNo: "2",
+                DisplayType: "2-Column"
+            },
+            {
+                SectionName: "Section3",
+                SequenceNo: "3",
+                DisplayType: "Tabular"
+            },
+            {
+                SectionName: "Section4",
+                SequenceNo: "4",
+                DisplayType: "1-Column"
+            }
+        ];
+  
+        $("#grid2").kendoGrid({
+            dataSource: {
+                data: sectionsname,
+                pageSize: 5,
+                schema: {
+                    model: {
+                        id: "GroupID",
+                        fields: {
+                            GroupID: {
+                                type: "number"
+                            },
+                            SectionName: {
+                                type: "string"
+                            },
+                            SequenceNo: {
+                                type: "number"
+                            },
+                            DisplayType: {
+                                type: "string"
+                            },
+                        }
+                    }
+                }
+  
+            },
+            pageable: true,
+            // toolbar: ["create"],
+            /*toolbar: [{
+                text: "Create",
+                template: "<button class=\"buttonlarge k-grid-add\" title=\"Add Section\"><i class=\"fa fa-plus-circle\"></i></button>"
+            }],*/
+  
+            // toolbar: [{ name: "create", template: '<button class="buttonlarge k-grid-add" title="Add New"><i class="fa fa-pencil" ></i></button>'}],
+            columns: [{
+                    field: "GroupID",
+                    hidden: true
+                },
+                {
+                    field: "SectionName",
+                    title: "Section Name"
+                },
+                {
+                    field: "SequenceNo",
+                    title: "Sequence No"
+                },
+                {
+                    field: "DisplayType",
+                    title: "Display Type"
+                },
+                //  { command: ["edit", "destroy"], title: "Action", width: "250px" }],
+                {
+                    command: [{
+                        name: "edit",
+                        template: "<a class=\"k-grid-edit buttonlarge\" title=\"Edit\" style=\"margin:5px;padding:3px;\"><i class=\"fa fa-pencil-square-o\"></i></a>"
+                    }, {
+                        text: "Delete",
+                        template: "<a class=\"k-grid-delete buttonlarge\" style='margin:5px;margin-left:10px;padding:3px;' title=\"Delete\"><i class=\"fa fa-trash\"></i></a>"
+                    }],
+                    title: "Action"
+                }
+            ],
+            height: 380,
+            editable: "inline",
+            edit: function(e) {
+                var commandCell = e.container.find("td:last");
+                commandCell.html('<a class=\"k-grid-update buttonlarge\" title=\"Save\" style="margin:5px;padding:3px;"><i class=\"fa fa-floppy-o\"></i></a><a class=\"k-grid-cancel buttonlarge\" title=\"Cancel\"  style="margin:5px;margin-left:10px;padding:3px;" ><i class=\"fa fa-times\"></i></a>');
+            }
+        });
+        var grid2 = $("#grid2").data("kendoGrid");
+        $("#addrow1").click(function() {
+            grid2.addRow();
+        })
+  
+        $('#attributelist').DataTable({
+            "scrollX": "100%",
+            "scrollY": "300px"
+        });
+        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker2').datetimepicker({
+            format: 'LT'
+        });
+        $('#datetimepicker3').datetimepicker({
+            format: 'LT'
+        });
+        $(".menubtn").click(function() {
+            value = $('#sidebar').css('left') === '0px' ? '-250px' : 0;
+            marvalue = $('#content').css('margin-left') === '250px' ? '0' : '250px';
+            $('#sidebar').animate({
+                left: value
+            });
+            $('#content').animate({
+                marginLeft: marvalue
+            });
+  
+        });
+        $("#usersetting").click(function() {
+            $('#userprof').fadeToggle();
+        });
+        $("#settingicon").click(function() {
+            $('#settingdropdown1').fadeToggle();
+        });
+  
+        $("#mailicon").click(function() {
+            $('#maildropdown').fadeToggle();
+        });
+  
+  
+        $(".processpreview").click(function() {
+            $('#previewprocess').show();
+            $('#inputsection').hide();
+        });
+        $(".viewedhr").click(function() {
+            $('#eDHRdetails').show();
+            $('#inputsection').hide();
+        });
+        /* $("#manualattribute").kendoMobileSwitch({
+                onLabel: "YES",
+                offLabel: "NO"
+            });*/
+  
+        $("#checkbox1").kendoMobileSwitch({
+            onLabel: "YES",
+            offLabel: "NO"
+        });
+        $("#checkbox2").kendoMobileSwitch({
+            onLabel: "YES",
+            offLabel: "NO"
+        });
+        $("#checkbox3").kendoMobileSwitch({
+            onLabel: "YES",
+            offLabel: "NO"
+        });
+        $("#checkbox4").kendoMobileSwitch({
+            onLabel: "YES",
+            offLabel: "NO"
+        });
+        $("#checkbox5").kendoMobileSwitch({
+            onLabel: "ஆம்",
+            offLabel: "இல்லை"
+        });
+        $("#checkbox6").kendoMobileSwitch({
+            onLabel: "ஆம்",
+            offLabel: "இல்லை"
+        });
+  
+        $('#accordion').slimScroll({
+            height: '100%',
+            color: '#ccc',
+            railVisible: true,
+            railColor: '#000'
+        });
+        $(".showeditdiv").click(function() {
+            $('#inputsection').show();
+            $('.gridcontent').hide();
+            $('#previewprocess').hide();
+            $('#eDHRdetails').hide();
+        });
+        $(".showgriddiv").click(function() {
+            $('.gridcontent').show();
+            $('#inputsection').hide();
+            $('#previewprocess').hide();
+            $('#eDHRdetails').hide();
+        });
+  
+        $("#optional").kendoListBox({
+            connectWith: "selected",
+            selectable: "multiple",
+            toolbar: {
+                tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom"]
+            }
+        });
+  
+        $("#selected").kendoListBox({
+            connectWith: "optional",
+            selectable: "multiple",
+            toolbar: {
+                tools: ["moveUp", "moveDown"]
+            }
+        });
+  
+        $("#optional1").kendoListBox({
+            connectWith: "selected1",
+            selectable: "multiple",
+            toolbar: {
+                tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom"]
+            }
+        });
+  
+        $("#selected1").kendoListBox({
+            connectWith: "optional1",
+            selectable: "multiple",
+            toolbar: {
+                tools: ["moveUp", "moveDown"]
+            }
+        });
+  
+        $("#dependent").kendoListBox({
+            connectWith: "notdependent",
+            selectable: "multiple",
+            toolbar: {
+                tools: ["transferTo", "transferFrom", "transferAllTo", "transferAllFrom"]
+            }
+        });
+  
+        $("#notdependent").kendoListBox({
+            connectWith: "dependent",
+            selectable: "multiple",
+            toolbar: {
+                tools: ["moveUp", "moveDown"]
+            }
+        });
+  
+  
+        $(document).on("click", function(event) {
+            var $trigger = $('#sidebar');
+            if ($trigger !== event.target && !$trigger.has(event.target).length) {
+                if ($('#sidebar').css('left') == "0px" && $('#content').css('margin-left') == "0px")
+                    $('#sidebar').animate({
+                        left: '-250px'
+                    });
+  
+            }
+        });
+  
+        var gridElement = $(".grid1");
+  
+        function resizeGrid() {
+            gridElement.css("height", gridheight);
+            gridElement.data("kendoGrid").resize();
+        }
+        $(window).resize(function() {
+  
+            /* if($('#content').css('margin-left')=="250px")
+            {*/
+  
+            /* $('#sidebar').css('left',"0px");*/
+  
+            winheight = window.innerHeight;
+            topheader = $('header').height();
+            heading = $('.heading').height();
+            headingsec = $('.headingsection').height();
+            gridheight = winheight - (topheader + heading + headingsec + 40) + 'px';
+            /*alert(winheight)*/
+            $('#content').css('height', winheight - (topheader + 1) + 'px');
+            $("#sidebar").css("height", winheight - (topheader + 1) + 'px');
+            $(".gridinner").css("height", gridheight);
+  
+            resizeGrid();
+            /* }
+            resizeGrid();*/
+  
+        });
+        winheight = window.innerHeight;
+        topheader = $('header').height();
+        heading = $('.heading').height();
+        headingsec = $('.headingsection').height();
+        gridheight = winheight - (topheader + heading + headingsec + 40) + 'px';
+        /*alert(winheight)*/
+        $('#content').css('height', winheight - (topheader + 1) + 'px');
+        $("#sidebar").css("height", winheight - (topheader + 1) + 'px');
+        $(".gridinner").css("height", gridheight);
+  
+  
+  
+        $('#attributeselect').hide();
+        $('#attributetext').show();
+  
+        $(".grid1").kendoGrid({
+            dataSource: {
+                data: products,
+                schema: {
+                    model: {
+                        fields: {
+                            ProcessName: {
+                                type: "string"
+                            },
+                            Description: {
+                                type: "string"
+                            },
+                            Areaname: {
+                                type: "string"
+                            },
+                            Wizardform: {
+                                type: "string"
+                            }
+                        }
+                    }
+                },
+                pageSize: 20
+            },
+            sortable: true,
+            scrollable: true,
+            reorderable: true,
+            /*  groupable: true,*/
+            resizable: true,
+            filterable: true,
+            /*filterable: {
+                mode: "row"
+            },*/
+            columnMenu: false,
+            pageable: true,
+            height: gridheight,
+            columns: [{
+                    selectable: true,
+                    width: "50px",
+                    locked: false,
+                    lockable: false
+                },
+                {
+                    field: "ProcessName",
+                    title: "Process Name",
+                    width: 200,
+                    locked: false,
+                },
+                {
+                    field: "Description",
+                    title: "Description",
+                    width: 350
+                },
+  
+                {
+                    field: "Areaname",
+                    title: "Area Name",
+                    width: 150
+                },
+                {
+                    field: "Wizardform",
+                    title: "Wizard Type",
+                    width: 70
+                }
+            ]
+        });
+  
+        $(".grid1").delegate("tbody>tr", "dblclick", function() {
+            $('#inputsection').show();
+            $('.gridcontent').hide();
+        });
+        var workflowname = [{
+                Role: "Admin",
+                User: "Magesh Babu S",
+                SequenceNo: "1"
+            }, {
+                Role: "Operator",
+                User: "James",
+                SequenceNo: "2"
+            },
+            {
+                Role: "Admin",
+                User: "Julian",
+                SequenceNo: "3"
+            },
+            {
+                Role: "Operator",
+                User: "Kalyani",
+                SequenceNo: "4"
+            }
+        ];
+  
+        $("#grid3").kendoGrid({
+            dataSource: {
+                data: workflowname,
+                pageSize: 5,
+                schema: {
+                    model: {
+                        id: "GroupID",
+                        fields: {
+                            GroupID: {
+                                type: "number"
+                            },
+                            Role: {
+                                type: "string"
+                            },
+                            User: {
+                                type: "string"
+                            },
+                            SequenceNo: {
+                                type: "number"
+                            }
+                        }
+                    }
+                }
+  
+            },
+            pageable: true,
+            // toolbar: ["create"],
+            /* toolbar: [{
+                text: "Create",
+                template: "<button class=\"buttonlarge k-grid-add\" title=\"Add Section\"><i class=\"fa fa-plus-circle\"></i></button>"
+            }],*/
+  
+            // toolbar: [{ name: "create", template: '<button class="buttonlarge k-grid-add" title="Add New"><i class="fa fa-pencil" ></i></button>'}],
+            columns: [{
+                    field: "GroupID",
+                    hidden: true
+                },
+                {
+                    field: "Role",
+                    title: "Role"
+                },
+                {
+                    field: "User",
+                    title: "User"
+                },
+                {
+                    field: "SequenceNo",
+                    title: "Sequence No"
+                },
+  
+  
+                //  { command: ["edit", "destroy"], title: "Action", width: "250px" }],
+                {
+                    command: [{
+                        name: "edit",
+                        template: "<a class=\"k-grid-edit buttonlarge\" title=\"Edit\" style=\"margin:5px;padding:3px;\"><i class=\"fa fa-pencil-square-o\"></i></a>"
+                    }, {
+                        text: "Delete",
+                        template: "<a class=\"k-grid-delete buttonlarge\" style='margin:5px;margin-left:10px;padding:3px;' title=\"Delete\"><i class=\"fa fa-trash\"></i></a>"
+                    }],
+                    title: "Action"
+                }
+            ],
+            height: 380,
+            editable: "inline",
+            edit: function(e) {
+                var commandCell = e.container.find("td:last");
+                commandCell.html('<a class=\"k-grid-update buttonlarge\" title=\"Save\" style="margin:5px;padding:3px;"><i class=\"fa fa-floppy-o\"></i></a><a class=\"k-grid-cancel buttonlarge\" title=\"Cancel\"  style="margin:5px;margin-left:10px;padding:3px;" ><i class=\"fa fa-times\"></i></a>');
+            }
+        });
+  
+        var grid = $("#grid3").data("kendoGrid");
+        $("#addrow").click(function() {
+            grid.addRow();
+        })
+  
+        $(document).on('change', ':file', function() {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+        $(':file').on('fileselect', function(event, numFiles, label) {
+  
+            var input = $(this).parents('.input-group').find(':text'),
+                log = numFiles > 1 ? numFiles + ' files selected' : label;
+  
+            if (input.length) {
+                input.val(log);
+            } else {
+                if (log) alert(log);
+            }
+  
+        });
+  
+  
+  
+    });
+    showonlyone(1);
+  
+    function showonlyone(id) {
+        $('section.wizardtype').hide();
+        $('section.wizardtype').each(function(index) {
+            if ($(this).attr("id") == "page" + id) {
+                $("#page" + id).show();
+            }
+        });
+    }
+  
+    $("#edhrdetailsgrid").kendoGrid({
+        sortable: true,
+        scrollable: true,
+        resizable: true,
+        height: 400
+    });
+  
+    /* $("#manualattribute").data("kendoMobileSwitch").bind("change", function(e) {
+                if(e.checked)
+                {
+                    // alert("3242342")
+                    $('#attributeselect').show();
+                    $('#attributetext').hide();
+                    $('#displayname').attr("readonly","readonly");
+                    $('#maxtextlen').attr("readonly","readonly");
+                    /* $('#refpicklist').attr("readonly","readonly");
+                    $('#datatype').attr("disabled","disabled");
+                    $('#desc').attr("disabled","disabled");
+  
+                }
+                else
+                {
+                    $('#attributeselect').hide();
+                    $('#attributetext').show();
+  
+                    $('#maxtextlen').removeAttr("readonly");
+                    $('#displayname').removeAttr("readonly");
+                    /* $('#refpicklist').attr("readonly");
+                    $('#datatype').removeAttr("disabled");
+                    $('#desc').removeAttr("disabled");
+  
+                }
+            });*/
+    /* if($('#manualattribute').prop('checked'))
+        {
+            alert("3242342")
+            $('#attributeselect').hide();
+            $('#attributetext').show();
+        }
+        else
+        {
+            $('#attributeselect').show();
+             $('#attributetext').hide();
+        }*/
+    /*function checkradio()
+    {        
+        //alert($('#manualattribute').prop('checked'))
+        if($('#manualattribute').prop('checked'))
+        {
+            $('#attributeselect').hide();
+            $('#attributetext').show();
+            $('#displayname').removeAttr("readonly");
+            $('#maxtextlen').removeAttr("readonly");
+            $('#refpicklist').attr("readonly");
+            $('#datatype').removeAttr("disabled");
+            $('#desc').removeAttr("disabled");
+        }
+        else
+        {
+            $('#attributeselect').show();
+            $('#attributetext').hide();
+            $('#displayname').attr("readonly","readonly");
+            $('#maxtextlen').attr("readonly","readonly");
+            $('#refpicklist').attr("readonly","readonly");
+            $('#datatype').attr("disabled","disabled");
+            $('#desc').attr("disabled","disabled");
+        }
+  
+    }*/
+  
+    var childForThiruvarur = [{
+            ID: 1,
+            Name: "திருவாரூர் "
+        },
+        {
+            ID: 2,
+            Name: "மன்னார்குடி "
+        },
+        {
+            ID: 3,
+            Name: "நன்னிலம்"
+        },
+        {
+            ID: 4,
+            Name: "நீடாமங்கலம்  "
+        },
+        {
+            ID: 5,
+            Name: "கூத்தாநல்லூர்"
+        },
+        {
+            ID: 6,
+            Name: "வலைங்கைமான் "
+        },
+        {
+            ID: 7,
+            Name: "குடவாசல் "
+        },
+        {
+            ID: 8,
+            Name: "திருத்துறைபூண்டி "
+        },
+        {
+            ID: 9,
+            Name: "கோட்டூர் "
+        },
+        {
+            ID: 10,
+            Name: "முத்துப்பேட்டை "
+        },
+        {
+            ID: 11,
+            Name: "பேரளம்  "
+        },
+        {
+            ID: 12,
+            Name: "திருமக்கோட்டை   "
+        }
+    ];
+    var childForNagapattinam = [{
+            ID: 1,
+            Name: "நாகப்பட்டினம்"
+        },
+        {
+            ID: 2,
+            Name: "வேதாரண்யம்"
+        },
+        {
+            ID: 3,
+            Name: "மயிலாடுதுறை "
+        },
+        {
+            ID: 4,
+            Name: "பூம்புகார்"
+        },
+        {
+            ID: 5,
+            Name: "சிர்காழி"
+        },
+        {
+            ID: 6,
+            Name: "கிழ்வளூர் "
+        },
+        {
+            ID: 7,
+            Name: "வேளாங்கன்னி "
+        },
+        {
+            ID: 8,
+            Name: "குத்தாலம்"
+        },
+        {
+            ID: 9,
+            Name: "தரங்கம்பாடி "
+        }
+    ];
+  
+    $('#kottamVal').change(function() {
+        debugger;
+        $('#stationVal').empty();
+  
+        if ($('#kottamVal').val() == 1) {
+            for (var i = 0; i < childForThiruvarur.length; i++) {
+                $('#stationVal').append($('<option>', {
+                    value: childForThiruvarur[i].ID,
+                    text: childForThiruvarur[i].Name
+                }));
+  
+            }
+        } else if ($('#kottamVal').val() == 2) {
+            for (var i = 0; i < childForNagapattinam.length; i++) {
+                $('#stationVal').append($('<option>', {
+                    value: childForNagapattinam[i].ID,
+                    text: childForNagapattinam[i].Name
+                }));
+  
+            }
+  
+        }
+  
+  
+    });
+    $('#fireOfficerName').change(function() {
+        document.getElementById("lastReturnFireOfficer").value = document.getElementById("fireOfficerName").value;
+  
+    });
+  
+    $('#AllInOnePerson').change(function() {
+        if (this.checked) {
+            document.getElementById("senderName").value = document.getElementById("callingCallerName").value;
+            document.getElementById("ownerNameAndAddress").value = document.getElementById("callingCallerName").value + "," + document.getElementById("callingAccidentAddress").value;
+        } else {
+            document.getElementById("senderName").value = "";
+            document.getElementById("ownerNameAndAddress").value = "";
+        }
+    });
+  </script>
+  
+  <script>
+    function myFunction() {
+        debugger;
+        sessionStorage.clear();
+        //document.getElementById("checkbox5").text();
+  
+        sessionStorage.setItem('Kottam', $("#kottamVal option:selected").text());
+        sessionStorage.setItem('AnnouncementNo', $("#announcementNo").val());
+        sessionStorage.setItem('Station', $("#stationVal option:selected").text());
+        sessionStorage.setItem('AccidentDate', $("#accidentDateVal").val());
+        sessionStorage.setItem('FireOfficerName', $("#fireOfficerName").val());
+  
+        sessionStorage.setItem('CallerName', $("#callingCallerName").val());
+        sessionStorage.setItem('TelephoneNo', $("#callingTelephoneNo").val());
+        sessionStorage.setItem('AccidentAddress', $("#callingAccidentAddress").val());
+        sessionStorage.setItem('SenderName', $("#senderName").val());
+        sessionStorage.setItem('CheckBoxValue', $("#AllInOnePerson").is(":checked"));
+        sessionStorage.setItem('CallingsenderJob', $("#callingsenderJob").val());
+        sessionStorage.setItem('OwnerNameAndAddress', $("#ownerNameAndAddress").val());
+        sessionStorage.setItem('CallingTime', $("#callingTime").val());
+        sessionStorage.setItem('VehicleStartedTime', $("#vehicleStartedTime").val());
+        sessionStorage.setItem('VehicleReachedTime', $("#vehicleReachedTime").val());
+        sessionStorage.setItem('BetweenDistance', $("#betweenDistance").val());
+        
+        sessionStorage.setItem('IncidentTime', $("#incidentTime").val());
+        sessionStorage.setItem('DetailAbtFire', $("#detailAbtFire").val());
+        sessionStorage.setItem('ReasonForFire', $("#reasonForFire").val());
+        sessionStorage.setItem('RescueWork', $("#rescueWork").val());
+        
+  
+        sessionStorage.setItem('FireaccdHappenedTime', $("#fireaccidentHappenedTime").val());
+        sessionStorage.setItem('SelectedBtn', $("#selectedBtn").text());
+        sessionStorage.setItem('AreaSquareOfFire', $("#areaSquareOfFire").val());
+        sessionStorage.setItem('ReasonForfireAccident', $("#reasonForfireAccident").val());
+        sessionStorage.setItem('FireAccidentdetailList', $("#fireAccidentdetailList").val());
+  
+  
+        sessionStorage.setItem('FireaccidentThings', $("#fireaccidentThings").val());
+        sessionStorage.setItem('Environtment', $("#environtment").val());
+        sessionStorage.setItem('AccidentPlaceCondition', $("#accidentPlaceConditions").val());
+        sessionStorage.setItem('FirehappenedArea', $("#firehappenedArea").val());
+        sessionStorage.setItem('RescueThingValue', $("#rescueThingValue").val());
+        sessionStorage.setItem('LastReturnFireOfficer', $("#lastReturnFireOfficer").val());
+        sessionStorage.setItem('ReturnDateTimeFromFireAccident', $("#ReturnDateTimeFromFireAccident").val());
+        sessionStorage.setItem('FireControllingTime', $("#fireControllingTime").val());
+  
+        sessionStorage.setItem('CheckBoxValue5', $("#checkbox5").is(":checked"));
+        sessionStorage.setItem('Male1', $("#male1").val());
+        sessionStorage.setItem('Male2', $("#male2").val());
+        sessionStorage.setItem('Male3', $("#male3").val());
+        sessionStorage.setItem('Female1', $("#female1").val());
+        sessionStorage.setItem('Female2', $("#female2").val());
+        sessionStorage.setItem('Female3', $("#female3").val());
+  
+        sessionStorage.setItem('CheckBoxValue6', $("#checkbox6").is(":checked"));
+        sessionStorage.setItem('Vmale1', $("#Vmale1").val());
+        sessionStorage.setItem('VFemale1', $("#VFemale1").val());
+        sessionStorage.setItem('Vmale2', $("#Vmale2").val());
+        sessionStorage.setItem('VFemale2', $("#VFemale2").val());
+        sessionStorage.setItem('Vmale3', $("#Vmale3").val());
+        sessionStorage.setItem('VFemale3', $("#VFemale3").val());
+        sessionStorage.setItem('Vmale4', $("#Vmale4").val());
+        sessionStorage.setItem('VFemale4', $("#VFemale4").val());
+  
+        sessionStorage.setItem('Otherdetail', $("#otherdetail").val());
+  
+  
+        window.location.href = "ThanipaniPreview.html";
+  
+    }
+  </script>
+  <script>
+    $(document).ready(function() {
+        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker2').datetimepicker({
+            format: 'LT'
+        });
+        $('#datetimepicker3').datetimepicker({
+            format: 'LT'
+        });
+    });
+  </script>
+    
+
+
+
 </body>
 </html>

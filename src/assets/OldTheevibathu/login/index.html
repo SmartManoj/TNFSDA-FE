@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>eDHR Login</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <!-- <link href="css/normalize.css" rel="stylesheet" type="text/css">-->
+        <link href="css/webflow.css" rel="stylesheet" type="text/css">
+        <link href="css/edhr.css" rel="stylesheet" type="text/css">
+        <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
+        <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);
+        </script>
+
+    </head>
+    <body class="body">
+        <div class="container">
+            <div class="content_container">
+                <div class="row1 w-row">
+                    <div class="col1 w-col w-col-6 w-col-stack"><img class="brand" src="images/flex_logo.png">
+                        <h1 class="app_name">eDHR</h1>
+                        <!--<h1 class="app_name sub">Sub heading of project</h1>-->
+                        <p class="app-description w-hidden-medium w-hidden-small w-hidden-tiny">eDHR aligns with FDA mandate of maintaining manufacturing information of all medical related products which are manufactured in Flex facilities. The application helps to maintain product information’s electronically and its easy retrieval as well. This also reduce margin of human errors and ensures sanity of all documents.</p>
+                    </div>
+                    <div class="col2 w-col w-col-6 w-col-stack">
+                        <div class="login-container">
+                            <div class="login-bg">
+                                <h1 class="logintxt">LOGIN</h1>
+                                <div class="form-container w-form">
+                                    <form>
+                                        <input class="inputfield" data-name="Name" maxlength="50" name="name" placeholder="Username" required="required" type="text">
+                                        <input class="inputfield" data-name="Password" maxlength="50" name="Password" placeholder="Password" required="required" type="password">
+                                        <!-- <div class="forgot-password" style="text-decoration: none;">  <input type="checkbox" class=""> Keep me logged in</div>-->
+
+                                        <!--<select class="inputfield" id="" name="field" required>
+<option value="">User Type</option>
+<option value="First">Manager</option>
+<option value="Second">Operator</option>
+<option value="Third">Supervisor</option></select>-->
+                                        <input class="submit_btn" type="submit" value="Login">
+                                    </form>
+
+                                </div>
+                                 <div class="errormsg" style="visibility:hidden;">Please enter username and password</div>
+                                <!-- <a class="forgot-password" href="#">Forgot Password</a>-->
+                                <!-- <a class="forgot-password" href="#">Sign in as different user</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/webflow.js" type="text/javascript"></script>
+        <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+    </body>
+</html>
