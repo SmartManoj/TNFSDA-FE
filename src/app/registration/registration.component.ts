@@ -40,14 +40,14 @@ export class RegistrationComponent implements OnInit {
   post()
   {
 
-    let data=[{
+    let data={
         'username': this.username,
-        'email':this.password,
-        'password': this.email,
+        'email':this.email,
+        'password': this.password,
         'mobile': this.mobile,
         'rank': this.rank
-            }]
-  this.Service.sendPostRequest('dummy',data).subscribe(
+            }
+  this.Service.sendPostRequest('http://0.0.0.0:8080/Register',data).subscribe(
     res => {
       console.log(res);
     }

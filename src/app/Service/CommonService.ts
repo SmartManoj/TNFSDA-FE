@@ -32,6 +32,7 @@ export class CommonService
     //     // let options = new Request ({ headers: headers });
     //     return this.http.post(Url,body)
     // }
+    // http://0.0.0.0:8080/Register
     sendPostRequest(Url: string,data: any): Observable<any> {
         return this.http.post<any>(Url, data);
    }

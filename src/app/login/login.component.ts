@@ -20,11 +20,11 @@ export class LoginComponent implements OnInit {
   post()
   {
 
-    let data=[{
+    let data={
         'username': this.username,
         'email':this.password       
-            }]
-  this.Service.sendPostRequest('dummy',data).subscribe(
+            }
+  this.Service.sendPostRequest('http://0.0.0.0:8080/Login',data).subscribe(
     res => {
       console.log(res);
     }
