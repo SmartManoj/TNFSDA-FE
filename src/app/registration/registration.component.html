@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- <head>
 	<title>Login V1</title>
-	<!-- <meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
 <!--===============================================================================================-->
-</head>
+<!-- </head> --> 
 <body>
 	<span class="Heading">தமிழ்நாடு தீயணைப்பு துறை</span>
 	<div class="limiter">
@@ -21,14 +21,27 @@
 					<span class="login100-form-title">
 						Register Here
 					</span>
+					<div class="wrap-input100 validate-input" data-validate = "Valid Username is required: ex@abc.xyz">
+						<input class="input100" type="number" [(ngModel)]="id_number" name="Username" placeholder="User ID">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						</span>
+					</div>
                     <div class="wrap-input100 validate-input" data-validate = "Valid Username is required: ex@abc.xyz">
-						<input class="input100" type="text" [(ngModel)]="username" name="Username" placeholder="Username">
+						<input class="input100" type="text" [(ngModel)]="first_name" name="Username" placeholder="First Name">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
-
+					<div class="wrap-input100 validate-input" data-validate = "Valid Username is required: ex@abc.xyz">
+						<input class="input100" type="text" [(ngModel)]="last_name" name="Username" placeholder="Last Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 						<input class="input100" type="email" [(ngModel)]="email" name="Email" placeholder="Email">
@@ -53,7 +66,14 @@
 						</span>
 					</div>
                     <div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="number" [(ngModel)]="rank" name="Pass" placeholder="Rank">
+						<!-- <input class="input100" type="number" [(ngModel)]="rank" name="Pass" placeholder="Rank"> -->
+						<select class="input100" [(ngModel)]="rank" name="Pass" placeholder="Rank">
+							<option value="LF">LF</option>
+                            <option value="FM">FM</option>
+                            <option value="DD">DD</option>
+                            <option value="SFO">SFO</option>
+							<option value="DFO">DFO</option>
+						</select>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-align-justify" aria-hidden="true"></i>
@@ -78,7 +98,7 @@
 					<div class="text-center loginBtn">
 
 						<button class="txt2" (click)="login()">Login here</button><br>
-						<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						<i class="fa fa-arrow-right m-l-5" aria-hidden="true"></i>
 						<!-- <a class="txt2" href="../login/login.component.html">
 							Login
 							

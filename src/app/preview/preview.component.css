@@ -1,0 +1,22 @@
+
+@import url("../../assets/OldTheevibathu/css/bootstrap.min.css");
+@font-face {
+    font-family: myTamilFont;
+    src: url('../../assets/fonts/fonts/ismail_0.ttf');
+}
+
+/* span {
+    font-family: myTamilFont;
+} */
+
+.tamilClass {
+    font-family: myTamilFont;
+}
+
+h5 {
+    color: #09abdd;
+}
+
+.subheading {
+    margin-left: 10px;
+}

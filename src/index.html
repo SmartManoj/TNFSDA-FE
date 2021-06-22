@@ -13,7 +13,7 @@
 
   <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
   <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css"> -->
   <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
   <!--===============================================================================================-->
@@ -24,7 +24,11 @@
     <link rel="stylesheet" type="text/css" href="assets/vendor/select2/select2.min.css">
   <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="assets/css/util.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"> 
+
+    <!-- for stationlogin -->
+    <!-- <link href="./StationLogin/css/styles.css" rel="stylesheet" /> -->
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
 
     <!--For Thanipani-->
     
@@ -60,6 +64,8 @@
           scale: 1.1
         })
       </script>
+      <!-- for stationlogin -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
 
     <!-- for thanipani -->
     <script src="./assets/OldTheevibathu/scripts/jquery-1.10.2.js"></script>
@@ -78,6 +84,20 @@
     <script src="./assets/OldTheevibathu/scripts/DataTables-1.10.11/js/dataTables.bootstrap.min.js"></script>
     <script src="./assets/OldTheevibathu/scripts/bootstrap-datetimepicker.min.js"></script>
     <script src="./assets/OldTheevibathu/scripts/jquery.slimscroll.min.js"></script>
+
+    
+
+<script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+</script>
 
     <!-- for thanipani -->
 <script>
@@ -911,7 +931,6 @@
     });
   </script>
     
-
 
 
 </body>

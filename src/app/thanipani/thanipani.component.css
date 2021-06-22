@@ -1,6 +1,7 @@
 /* @import url("../../assets/OldTheevibathu/css/style.css"); */
 @import url("../../assets/OldTheevibathu/css/bootstrap.min.css");
 
+
  /* @import url("../../assets/OldTheevibathu/scripts/jquery-1.10.2.js");
     @import url("../../assets/OldTheevibathu/scripts/bootstrap.min.js"); */
 
@@ -18,6 +19,152 @@
 
 
 /* ForThanipani */
+/* Switch starts here */
+.rocker {
+    display: inline-block;
+    position: relative;
+    /*
+    SIZE OF SWITCH
+    ==============
+    All sizes are in em - therefore
+    changing the font-size here
+    will change the size of the switch.
+    See .rocker-small below as example.
+    */
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #888;
+    width: 7em;
+    height: 4em;
+    overflow: hidden;
+    border-bottom: 0.5em solid #eee;
+  }
+  
+  .rocker-small {
+    font-size: 0.75em; /* Sizes the switch */
+    margin: 1em;
+  }
+  
+  .rocker::before {
+    content: "";
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #999;
+    border: 0.5em solid #eee;
+    border-bottom: 0;
+  }
+  
+  .rocker input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .switch-left,
+  .switch-right {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5em;
+    width: 3em;
+    transition: 0.2s;
+  }
+  
+  .switch-left {
+    height: 2.4em;
+    width: 2.75em;
+    left: 0.85em;
+    bottom: 0.4em;
+    background-color: #ddd;
+    transform: rotate(15deg) skewX(15deg);
+  }
+  
+  .switch-right {
+    right: 0.5em;
+    bottom: 0;
+    background-color: #bd5757;
+    color: #fff;
+  }
+  
+  .switch-left::before,
+  .switch-right::before {
+    content: "";
+    position: absolute;
+    width: 0.4em;
+    height: 2.45em;
+    bottom: -0.45em;
+    background-color: #ccc;
+    transform: skewY(-65deg);
+  }
+  
+  .switch-left::before {
+    left: -0.4em;
+  }
+  
+  .switch-right::before {
+    right: -0.375em;
+    background-color: transparent;
+    transform: skewY(65deg);
+  }
+  
+  input:checked + .switch-left {
+    background-color: #449937;
+    color: #fff;
+    bottom: 0px;
+    left: 0.5em;
+    height: 2.5em;
+    width: 3em;
+    transform: rotate(0deg) skewX(0deg);
+  }
+  
+  input:checked + .switch-left::before {
+    background-color: transparent;
+    width: 3.0833em;
+  }
+  
+  input:checked + .switch-left + .switch-right {
+    background-color: #ddd;
+    color: #888;
+    bottom: 0.4em;
+    right: 0.8em;
+    height: 2.4em;
+    width: 2.75em;
+    transform: rotate(-15deg) skewX(-15deg);
+  }
+  
+  input:checked + .switch-left + .switch-right::before {
+    background-color: #ccc;
+  }
+  
+  /* Keyboard Users */
+  input:focus + .switch-left {
+    color: #333;
+  }
+  
+  input:checked:focus + .switch-left {
+    color: #fff;
+  }
+  
+  input:focus + .switch-left + .switch-right {
+    color: #fff;
+  }
+  
+  input:checked:focus + .switch-left + .switch-right {
+    color: #333;
+  }
+
+.content-body1 {
+    min-height: 100% !important;
+    padding: 0px 0px 0px 0px !important;
+    display: block;
+}
 .k-grid {
     border-color: #bbb;
 }
@@ -340,9 +487,9 @@ input.k-textbox:active {
     src: url('../../assets/fonts/fonts/ismail_0.ttf');
 }
 
-input {
+/* input {
     font-family: myTamilFont;
-}
+} */
 
 .tamilClass {
     font-family: myTamilFont;

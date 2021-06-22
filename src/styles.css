@@ -19,14 +19,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 61px 130px 33px 95px;
 }
 
-.content-body  {
+/* .content-body  {
     min-height: 100% !important; 
-    padding: 36px 1rem !important;
+    padding:20px 10px 0px 10px !important;
     display: block;
+} */
+.content-body {
+    min-height: 100% !important; 
+    padding: 0px 0px 0px 0px !important;
+    display: block;
+}
+.background-pan{
+    background-color: #1f2f3e;
 }
 .background{
 width: 100%;
-    min-height: 100vh;
+ /* min-height: 100vh; */
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -51,8 +59,9 @@ width: 100%;
     display: flex;
     justify-content: center;
     font-size: 22px;
-    margin-bottom: 12px;
     color: darkblue;
+    padding: 20px 10px 0px 10px !important;
+    margin-bottom: 20px;
 }
 .loginBtn
 {

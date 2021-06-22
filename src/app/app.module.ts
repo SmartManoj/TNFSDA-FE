@@ -12,7 +12,16 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import {CommonService} from './Service/CommonService';
 import { HttpClientModule} from '@angular/common/http';
-import { ThanipaniComponent } from './thanipani/thanipani.component'
+import { ThanipaniComponent } from './thanipani/thanipani.component';
+import { StationLoginComponent } from './station-login/station-login.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TheevibathuComponent } from './theevibathu/theevibathu.component';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { PreviewComponent } from './preview/preview.component';
+import { SfoLoginComponent } from './sfo-login/sfo-login.component';
+import { DfoLoginComponent } from './dfo-login/dfo-login.component';
+import { AddMembersFormComponent } from './add-members-form/add-members-form.component';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +29,12 @@ import { ThanipaniComponent } from './thanipani/thanipani.component'
     RegistrationComponent,
     LoginComponent,
     ThanipaniComponent,
+    StationLoginComponent,
+    TheevibathuComponent,
+    PreviewComponent,
+    SfoLoginComponent,
+    DfoLoginComponent,
+    AddMembersFormComponent,
     
   ],
   imports: [
@@ -31,8 +46,9 @@ import { ThanipaniComponent } from './thanipani/thanipani.component'
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    
-    HttpClientModule
+    MatTooltipModule,
+    HttpClientModule,
+    NgxUiLoaderModule,
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]

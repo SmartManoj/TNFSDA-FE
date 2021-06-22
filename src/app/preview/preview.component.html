@@ -1,0 +1,601 @@
+<div id="downloadpdf">
+<div style="width:100%; text-align: right;font-size:10px;">
+    <span style=" padding:10px;">T.N.F.S. 25 - 90,000 Cps.-GBP., Vdm.-2015</span>
+</div>
+<!-- <div class="width100p">
+    <img src="../../assets/OldTheevibathu/images/fireacc.jpg" style="float:left" width="80">
+
+</div> -->
+<span style="display: flex; justify-content: center;"><img src="../../assets/OldTheevibathu/images/fireacc.jpg" style="float:left" width="80"></span>
+<h4 style="text-align:center; padding-top:5px; font-weight: 600;">தமிழ்நாடு தீயணைப்பு துறை - தீ விபத்து அறிக்கை</h4>
+<!-- <h4 style="text-align:center; padding-top:5px;padding-right:100px; font-weight: 600;">தீ விபத்து அறிவிக்கை</h4> -->
+<h5 style="text-align:center; padding-top:5px;padding-right:10px;font-weight: 600;">ஆணை எண் 14, படிவம் எண் 37.</h5>
+<div style="clear:both;"></div>
+<br />
+<span style="display: flex; justify-content: flex-end;cursor: pointer;" (click)="captureScreen()">Download <i class="fa fa-download"></i></span>
+<section>
+    <div class="col-md-12 subheading">
+        <h5><strong>பொதுவானது</strong></h5>
+    </div>
+
+    <div class="col-md-12" style="border: 1px solid white;margin-left:30px;width:92%;">
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> கோட்டம் : </span>
+                <span style="color: blue">{{Kottam}}</span>
+            </div>
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீ விபத்து அறிக்கை எண் : </span>
+                <span style="color: blue">{{ArikkaiNumber}}</span>
+            </div>
+        </div>
+        <div class="col-md-12">
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> நிலையம் : </span>
+                <span style="color: blue">{{Station}}</span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> விபத்து நேர்ந்த நாள் : </span>
+                <span style="color: blue">{{AccidentDate}}</span>
+
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <div style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீயணைப்பு நடந்த இடத்தில் பொறுப்பு வகித்த அலுவலர் :
+                </span><span style="color: blue">{{FireOfficerName}}</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="col-md-12 subheading">
+        <h5><strong>அழைப்பு</strong></h5>
+    </div>
+
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> அழைத்தவர் : </span>
+                <span style="color: blue">{{CallerName}}</span>
+
+            </div>
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தொலைபேசி / தீ எச்சரிக்கை எண் : </span>
+                <span style="color: blue">{{TelephoneNumber}}</span>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> விபத்துக்குள்ளான இடத்தின் முகவரி : </span>
+                <span style="color: blue">{{AccidentAddress}}</span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> அனுபவிப்பவரின் பெயர் : </span>
+                <span style="color: blue">{{OwnerName}}</span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தொழில் : </span>
+                    <span style="color: blue">{{Job}}</span>
+            </div>
+        </div>
+
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> உரிமையாளரின் பெயர், முகவரி : </span>
+                    <span style="color: blue">{{OwnerNameAddress}}</span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> அழைத்த நேரம் : </span>
+                    <span style="color: blue">{{CallingTime}}</span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> வண்டிகள் முதலில் புறப்பட்டு சென்ற நேரம் : </span>
+                    <span style="color: blue">{{VehicleStartTime}}</span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> விபத்து நடந்த இடத்தில் வந்து சேர்ந்த நேரம் : </span>
+                    <span style="color: blue">{{VehicleReachedTime}}</span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> நிலையத்திற்கும் விபத்து நடந்த இடத்திற்குமுள்ள தொலைவு : </span>
+                    <span style="color: blue">{{BetweenDistance}}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="col-md-12 subheading">
+        <h5><strong>தீ விபத்து பற்றிய விவரங்கள்:</strong></h5>
+    </div>
+
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <!-- <span style="font-weight:bold;"> தீ விபத்து நேர்ந்த நேரம் (ஏறக்குறைய) : </span> -->
+                <span style="font-weight:bold;">நிகழ்ச்சியின் நேரம்: </span>
+                <span style="color: blue">{{IncidentTime}}</span>
+            </div>
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீ விபத்திற்கு காரணம் எனக் கருதப்படுவது : </span>
+                <span style="color: blue">{{ReasonForFire}}</span>
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <!-- <span style="font-weight:bold;"> தீ விபத்து நேர்ந்த நேரம் (ஏறக்குறைய) : </span> -->
+                <span style="font-weight:bold;">விபத்தை பற்றிய முழு விவரம்: </span>
+                <span style="color: blue">{{DetailAbtFire}}</span>
+            </div>
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;">புரிந்த பணி : </span>
+                <span style="color: blue">{{RescueWork}}</span>
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <!-- <span style="font-weight:bold;"> தீ விபத்து நேர்ந்த நேரம் (ஏறக்குறைய) : </span> -->
+                <span style="font-weight:bold;">தீ விபத்து நடந்த இடத்தை விட்டுப் புறப்பட்ட கடைசி அலுவலரின் பெயர்: </span>
+                <span style="color: blue">{{LastReturnOfficer}}</span>
+            </div>
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;">தீ விபத்து நடந்த இடத்தை விட்டுப் புறப்பட்ட நாளும், நேரமும் : </span>
+                <span style="color: blue">{{ReturnDateTimeFromFireAcc}}</span>
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;">தனிப்பணிக்கு ஆன மொத்த நேரம் மணி/நிமிடம் : </span>
+                <span style="color: blue">{{FireControllingTime}}</span>
+            </div>
+            <!-- <span class="tamilClass" style="font-size: 10px;">
+                <strong>tpgj;jpw;Fs;shd cilikapd; tptuk;, ifj;bjhHpy;
+                    fl;Lkhd khjphp, gug;g[ Kjypad</strong> </span> -->
+        </div>
+
+        <!-- <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீ விபத்தின் வகை : </span>
+                <span style="color: blue" id=prevSelectedBtn></span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீ விபத்தின் பரப்பு : </span>
+                <span style="color: blue" id=prevAreaSquareOfFire></span>
+            </div>
+
+        </div> -->
+
+        <!-- <div class="col-md-12"> -->
+            <!-- <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> அழிபாட்டின் விவரம் : </span>
+                <span style="color: blue" id=prevReasonForfireAccident></span>
+            </div> -->
+           
+        <!-- </div> -->
+    </div>
+</section>
+
+<!-- <section>
+    <div class="col-md-12 subheading">
+        <h5><strong>அடியிற்கண்டவைகளின் உத்தேச மதிப்பு:</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;">விபத்திற்குள்ளான உடமை : </span>
+                <span style="color: blue" id=prevFireaccidentThings></span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> சூழ்ந்துள்ள ஏதேனும் இடர் : </span>
+                <span style="color: blue" id=prevEnvirontment></span>
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;">விபத்திற்குள்ளான இடத்தின் அழிவு : </span>
+                <span style="color: blue" id=prevAccidentPlaceCondition></span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீயிலிருந்து காப்பாற்றபட்ட உடைமையின் மதிப்பு : </span>
+                <span style="color: blue" id=prevFirehappenedArea></span>
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீயிலிருந்து காப்பாற்றபட்ட உடைமையின் மதிப்பு : </span>
+                <span style="color: blue" id=prevRescueThingValue></span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;">தீ விபத்து நடந்த இடத்தை விட்டுப் புறப்பட்ட கடைசி அலுவலரின் பெயர் :
+                </span>
+                <span style="color: blue" id=prevLastReturnFireOfficer></span>
+            </div>
+
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீ விபத்து நடந்த இடத்தை விட்டுப் புறப்பட்ட நாளும், நேரமும் :
+                </span>
+                <span style="color: blue" id=prevReturnDateTimeFromFireAccident></span>
+            </div>
+
+            <div class="col-md-6" style="font-size:14px;padding:10px;">
+                <span style="font-weight:bold;"> தீ அணைப்பதற்குப் பிடித்த நேரம் மணி/நிமிடம் : </span>
+                <span style="color: blue" id=prevFireControllingTime></span>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<section *ngIf="RescuedMembers==true">
+    <div class="col-md-12 subheading">
+        <h5><strong>தப்பித்துக்கொண்டவர்கள் / காப்பாற்றப்பட்டவர்கள்:</strong></h5>
+    </div>
+    
+    <div class="col-md-12 subheading" *ngIf="WithoutHelp.length>0">
+        <h5><strong>தீயணைப்பு பணியாளரின் உதவியின்றி தப்பித்து கொண்டவர்கள்:</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of WithoutHelp" style="color: blue">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+    <div class="col-md-12 subheading" *ngIf="WithoutTools.length>0">
+        <h5><strong>கருவிகளின் உதவியின்றி தீயணைப்புப் பணியாளரால் தீயின்றும் வெளியேற உதவி செய்யப்பட்டவர்கள்:</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of WithoutTools" style="color: blue">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+    <div class="col-md-12 subheading" *ngIf="WithTools.length>0">
+        <h5><strong>கருவிகளை பயன்படுத்தி தீயணைப்புப் பணியாளரால் காப்பாற்றப்பட்டவர்கள்:</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of WithTools" style="color: blue">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+</section>
+
+<!-- <section>
+    <div class="col-md-12">
+        <br />
+        <span class="tamilClass" style="font-size:14px ;">
+            <strong> Fwpg;g[: bgha; miHg;g[fisg;
+                gw;wpa mwpf;ikfis, mwpf;ifg; gotj;jpy; 2 k; ghfj;jpy; FWf;fhf rptg;g[ ikapy;
+                “bgha;ahdJ” vd;W ep\gpf;f Btz;Lk;.</strong></span>
+    </div>
+</section> -->
+<section *ngIf="Adipaadugal==true">
+    <div class="col-md-12 subheading">
+        <h5><strong>விபத்துக்குள்ளானவர்கள் விவரம்:</strong></h5>
+    </div>
+    <div class="col-md-12 subheading" *ngIf="DeadFire.length>0">
+        <h5><strong>தீயணைப்பு பணியாளர் - இறந்தவர்கள்</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of DeadFire" style="color: blue">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+    <div class="col-md-12 subheading" *ngIf="InjuredFire.length>0">
+        <h5><strong>தீயணைப்பு பணியாளர் - இறந்தவர்கள்</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of InjuredFire" style="color: blue">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+    <div class="col-md-12 subheading" *ngIf="DeadOthers.length>0">
+        <h5><strong>மற்றவர்கள் - காயமடைந்தவர்கள்</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of DeadOthers" style="color: blue">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+    <div class="col-md-12 subheading" *ngIf="InjuredOthers.length>0">
+        <h5><strong>மற்றவர்கள் - இறந்தவர்கள்</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Mobile</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of InjuredOthers" style="color: blue"> 
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.mobile}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+    
+</section>
+
+
+<section>
+    <div class="col-md-12 subheading">
+        <h5><strong>விபத்து நடந்த இடத்தில் வந்து செயலாற்றிய செயற்கருவிகளின் விவரங்கள்:</strong></h5>
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>தீயணைப்புப் நிலையத்தின் பெயர்</th>
+                <th>செயற்கருவியின் மாதிரி</th>
+                <th>பதிவு எண்</th>
+                <th>புறப்பட்ட நேரம்</th>
+                <th>விபத்து நடந்த இடத்திற்கு வந்து சேர்ந்த நேரம்</th>
+                <th>விபத்து நேர்ந்த இடத்தை விட்டு புறப்பட்ட நேரம்</th>
+                <th>சொந்த நிலையத்திற்கு வந்து சேர்ந்த நேரம்</th>
+                <th>பயணம் செய்த நேரம்</th>
+                <th>நீரடித்த மணி நேரம்</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of ArriveACt" style="color: blue">
+                <td>{{item.StatnName}}</td>
+                <td>{{item.ModelName}}</td>
+                <td>{{item.RegNo}}</td>
+                <td>{{item.SStartedTime}}</td>
+                <td>{{item.SReachedTime}}</td>
+                <td>{{item.SReturnTime}}</td>
+                <td>{{item.ReachedStationTime}}</td>
+                <td>{{item.TravelHours}}</td>
+                <td>{{item.WaterPumbingTime}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+   
+    
+</section>
+
+<section>
+    <div class="col-md-12 subheading">
+        <h5><strong>வந்து செயலாற்றிய தீயணைப்பு அலுவலர் மற்றும் தீயணைப்பு பணியினர்:</strong></h5>
+        <!-- <h6>
+            (விடுப்பு ஆட்களை சேர்க்க கூடாது)
+        </h6> -->
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="border-bottom: 1px solid gray;">
+           
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>தரம்</th>
+                <th>எண்</th>
+                <th>பெயர்</th>
+             
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of FireTeam" style="color: blue">
+                <td>{{item.rank}}</td>
+                <td>{{item.id_number}}</td>
+                <td>{{item.name}}</td>
+              
+            </tr>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+    
+</section>
+
+<section>
+    <div class="col-md-12 subheading">
+        <h5><strong>வேறு எவையேனும் குறிப்புகள்:</strong></h5>
+
+    </div>
+    <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:92%;">
+        <div class="col-md-12" style="font-size:14px;padding:10px;">
+            <span style="font-weight:bold;"> {{Others}}</span>
+            <span style="color: blue" id=prevOtherdetail></span>
+        </div>
+    </div>
+</section>
+
+<div style="clear:both"></div> <br />
+    <div style="width:20%;padding: 5px;float : right">
+        <span style="color: blue">{{Sign}}</span>
+        <div style="font-size:14px;font-family:'Times New Roman'; color:#17566e"><b>(ஒப்பம்)</b></div>
+        <div style="font-size:14px;font-family:'Times New Roman'">தீயணைப்பிற்கு பொறுப்பு வகித்த அலுவலர்
+        </div>
+        <div style="font-size:14px;font-family:'Times New Roman'"> தமிழ்நாடு தீயணைப்பு துறை</div>
+    </div>
+    <div style="clear:both"></div> <br />
+    <div style="border-bottom:double #000000;">&nbsp;</div>
+</div>
+
+
+<script src="../../assets/OldTheevibathu/scripts/jquery-1.10.2.js"></script>
+    <script src="../../assets/OldTheevibathu/scripts/bootstrap.min.js"></script>
+    <script src="../../assets/OldTheevibathu/js/kendo.all.min.js"></script>
+    <script src="../../assets/OldTheevibathu/js/jszip.min.js"></script>

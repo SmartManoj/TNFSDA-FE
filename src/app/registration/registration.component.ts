@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,FormControl} from '@angular/forms'
 import { Router } from '@angular/router';
 import {CommonService} from '../Service/CommonService';
+import { NgxUiLoaderService } from "ngx-ui-loader"; // Import NgxUiLoaderService
+
+// import { NgxSpinnerService } from "ngx-spinner";
 // import  }from"@angular/compiler";
 
 @Component({
@@ -17,7 +20,12 @@ export class RegistrationComponent implements OnInit {
   email:any;
   mobile:any;
   rank:any;
-  constructor(private FormBuilder:FormBuilder, public Service: CommonService, public route: Router) {
+  first_name: any;
+  last_name: any;
+  id_number: any;
+
+
+ constructor(private FormBuilder:FormBuilder, public Service: CommonService, public route: Router,private ngxService: NgxUiLoaderService) {
     
    }
 
@@ -39,18 +47,37 @@ export class RegistrationComponent implements OnInit {
   }
   post()
   {
-
+    this.ngxService.start();
+    
     let data={
-        'username': this.username,
+        'id_number': this.id_number,
+        'first_name': this.first_name,
+        'last_name':this.last_name,
         'email':this.email,
         'password': this.password,
         'mobile': this.mobile,
-        'rank': this.rank
+        'rank': this.rank,
+              }
+      this.Service.sendPostRequest(this.Service.URL + '/register',data).subscribe(
+            result => {
+              if(result)
+              {
+                debugger
+                this.ngxService.stop();
+                let alert = result.more_info
+                this.Service.ToastSuccess(alert);
+                this.route.navigate(['/login']);
+              }
+              console.log(result);
             }
-  this.Service.sendPostRequest('http://0.0.0.0:8080/Register',data).subscribe(
-    res => {
-      console.log(res);
-    }
+            ,(error) => {
+              debugger      
+              
+                this.ngxService.stop(); // stop foreground spinner of the loader "loader-01" with 'default' taskId
+                let alert = error.error.message
+                this.Service.AlertWarning(alert);
+               
+          }
 );
   }
 }
