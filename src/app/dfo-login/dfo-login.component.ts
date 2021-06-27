@@ -160,7 +160,7 @@ Kottam: any = 0;
    
     let data = {
 
-      'approval': 2,
+      'approve_status': 2,
       '_id': id,
     }
     this.Service.sendPostRequest(this.Service.URL + '/rescue_call', data).subscribe(

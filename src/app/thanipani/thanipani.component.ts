@@ -384,7 +384,7 @@ export class ThanipaniComponent implements OnInit {
       'rescued_animal_active': this.RescuedAnimal == true ? '1' : '0',
       'type_of_animal':this.RescuedAnimalName,
       'no_of_animal':this.NoOfAnimal,
-      'approval': 0,
+      'approve_status': 0,
     
     }
     this.Service.sendPostRequest(this.Service.URL + '/rescue_call', data).subscribe(
