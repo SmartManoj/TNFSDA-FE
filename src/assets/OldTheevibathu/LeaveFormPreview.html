@@ -1,0 +1,249 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <script src="scripts/jquery-1.10.2.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>தமிழ்நாடு தீயணைப்பு துறை</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/fireicon.jpg">
+    <style>
+        @font-face {
+            font-family: myTamilFont;
+            src: url(fonts/ismail_0.ttf);
+        }
+
+        span {
+            font-family: myTamilFont;
+        }
+
+        .tamilClass {
+            font-family: myTamilFont;
+        }
+
+        h5 {
+            color: #09abdd;
+        }
+
+        .subheading {
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div style="width:100%; text-align: right;font-size:10px;">
+        <span style=" padding:10px;">T.N.F.S. 25 - 90,000 Cps.-GBP., Vdm.-2015</span>
+    </div>
+    <div class="width100p">
+        <img src="images/fireacc.jpg" style="float:left" width="80">
+
+    </div>
+    <h4 style="text-align:center; padding-top:5px;padding-right:100px;text-decoration: underline;font-weight: 600;">தமிழ்நாடு தீயணைப்பு மீட்புப் பணிகள் துறை</h4>
+    <h4 style="text-align:center; padding-top:5px;padding-right:100px;text-decoration: underline;font-weight: 600;">காக்கும் பணியில் நூறு ஆண்டுகள் (1908-2008)</h4>
+    <h4 style="text-align:center; padding-top:5px;padding-right:100px;text-decoration: underline;font-weight: 600;">WE SERVE TO SAVE</h4>
+    <h5 style="text-align:center; padding-top:15px;padding-right:75px;font-weight: 600;font-size: 20px;">விடுப்பு விண்ணப்பம்</h5>
+    <div style="clear:both;"></div>
+    <br />
+    
+
+
+    <section>
+        
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:90%;height:72%;">
+
+            <div class="col-md-12"  style="font-size:15px;padding:15px;">
+                
+                    <span style="font-weight:bold;"> உயர்திரு நிலைய அலுவலர் அவர்கள் சமூகத்திற்கு முதீஆ மூலமாக தீஆ        மிகுந்த வணக்கமுடன் எழுதிக்கொண்டது </span>
+                    <span id=prevCallerName></span>
+            </div> 
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> பதவி எண்: </span>
+                    <span style="color: blue" id=prevPathaviEn></span>
+
+                </div>
+               
+
+            </div> 
+               <div class="col-md-12">
+                
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> பெயர்: </span>
+                    <span style="color: blue" id=prevPeyar></span>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> விடுப்பு கோரும் நாட்கள்:  </span>
+                    <span style="color: blue" id=prevNoOfDays></span> to 
+                    <span style="color: blue" id=prevNoOfDays2></span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> விடுப்பிற்கான காரணம்: </span>
+                    <span style="color: blue" id=prevReasonForLeave></span>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;">என்ன வகையான விடுப்பு:
+                    </span><span style="color: blue" id=prevLeaveType></span>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-8" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;"> ஈடு விடுப்பாயின் அரசு விடுப்பில் பணிபுரிந்த நாட்கள்:
+                    </span><span style="color: blue" id=prevWorkedDays></span>
+                </div>
+
+            </div>
+             <div class="col-md-12">
+                <div class="col-md-6" style="font-size:15px;padding:15px;">
+                    <span style="font-weight:bold;">விடுப்பு முகவரி:
+                    </span><span style="color: blue" id=prevLeaveAddress></span>
+                </div>
+
+            </div>
+
+         <div style="width:20%;padding: 5px;float : right">
+        <span style="color: blue" id=prevYours></span>
+    
+        <div style="font-size:15px;font-family:'Times New Roman'"><span>தங்கள் உண்மையுள்ள</span>
+        </div>
+      
+    </div>
+        </div>
+         
+    </section>
+    
+
+    <div style="clear:both"></div> <br />
+    <div style="clear:both"></div> <br />
+    <div style="border-bottom:double #000000;">&nbsp;</div>
+    <!-- <table border="0" style=" border-collapse: collapse; position: absolute; bottom: 0;left:0;" width="100%">
+        <tr>
+            <td style="font-size:10px;padding:5px;">
+                <Span>T.N.F.S. 25.</Span>
+            </td>
+        </tr>
+    </table> -->
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        debugger;
+/*
+        document.getElementById("prevKottamVal").innerHTML = sessionStorage.getItem("Kottam");
+        document.getElementById("prevAnnouncementNo").innerHTML = sessionStorage.getItem("AnnouncementNo");
+        document.getElementById("prevStationVal").innerHTML = sessionStorage.getItem("Station");
+        document.getElementById("prevAccidentDateVal").innerHTML = sessionStorage.getItem("AccidentDate");
+        document.getElementById("prevFireOfficerName").innerHTML = sessionStorage.getItem("FireOfficerName");
+
+        document.getElementById("prevCallerName").innerHTML = sessionStorage.getItem("CallerName");
+        document.getElementById("prevTelephoneNo").innerHTML = sessionStorage.getItem("TelephoneNo");
+        document.getElementById("prevAccidentAddress").innerHTML = sessionStorage.getItem("AccidentAddress");
+
+        var isTrueFalse = sessionStorage.getItem("CheckBoxValue");
+        if (isTrueFalse == "true") {
+            document.getElementById("prevAllInOnePerson").checked = isTrueFalse;
+        }*/
+
+        //leaveform
+         document.getElementById("prevPathaviEn").innerHTML = sessionStorage.getItem("PathaviEn");
+         document.getElementById("prevPeyar").innerHTML = sessionStorage.getItem("Peyar");
+         document.getElementById("prevNoOfDays").innerHTML = sessionStorage.getItem("NoOfDays");
+        document.getElementById("prevNoOfDays2").innerHTML = sessionStorage.getItem("NoOfDays2");
+         document.getElementById("prevReasonForLeave").innerHTML = sessionStorage.getItem("ReasonForLeave");
+         document.getElementById("prevLeaveType").innerHTML = sessionStorage.getItem("LeaveType");
+         document.getElementById("prevWorkedDays").innerHTML = sessionStorage.getItem("WorkedDays");
+        document.getElementById("prevLeaveAddress").innerHTML = sessionStorage.getItem("LeaveAdrress");
+        /*document.getElementById("prevKottam1").innerHTML = sessionStorage.getItem("Kottam1");
+        document.getElementById("prevKottam2").innerHTML = sessionStorage.getItem("Kottam2");
+        document.getElementById("prevKottam3").innerHTML = sessionStorage.getItem("Kottam3");*/
+        document.getElementById("prevYours").innerHTML = sessionStorage.getItem("Yours");
+        
+        
+        /*document.getElementById("prevSenderName").innerHTML = sessionStorage.getItem("SenderName");
+        document.getElementById("prevCallingsenderJob").innerHTML = sessionStorage.getItem("CallingsenderJob");
+        document.getElementById("prevOwnerNameAndAddress").innerHTML = sessionStorage.getItem("OwnerNameAndAddress");
+        document.getElementById("prevCallingTime").innerHTML = sessionStorage.getItem("CallingTime");
+        document.getElementById("prevVehicleStartedTime").innerHTML = sessionStorage.getItem("VehicleStartedTime");
+        document.getElementById("prevVehicleReachedTime").innerHTML = sessionStorage.getItem("VehicleReachedTime");
+        document.getElementById("prevBetweenDistance").innerHTML = sessionStorage.getItem("BetweenDistance");
+
+
+        document.getElementById("prevFireaccdHappenedTime").innerHTML = sessionStorage.getItem("FireaccdHappenedTime");
+        document.getElementById("prevSelectedBtn").innerHTML = sessionStorage.getItem("SelectedBtn");
+        document.getElementById("prevAreaSquareOfFire").innerHTML = sessionStorage.getItem("AreaSquareOfFire");
+        document.getElementById("prevReasonForfireAccident").innerHTML = sessionStorage.getItem("ReasonForfireAccident");
+        document.getElementById("prevFireAccidentdetailList").innerHTML = sessionStorage.getItem("FireAccidentdetailList");
+
+        document.getElementById("prevFireaccidentThings").innerHTML = sessionStorage.getItem("FireaccidentThings");
+        document.getElementById("prevEnvirontment").innerHTML = sessionStorage.getItem("Environtment");
+        document.getElementById("prevAccidentPlaceCondition").innerHTML = sessionStorage.getItem("AccidentPlaceCondition");
+        document.getElementById("prevFirehappenedArea").innerHTML = sessionStorage.getItem("FirehappenedArea");
+        document.getElementById("prevRescueThingValue").innerHTML = sessionStorage.getItem("RescueThingValue");
+        document.getElementById("prevLastReturnFireOfficer").innerHTML = sessionStorage.getItem("LastReturnFireOfficer");
+        document.getElementById("prevReturnDateTimeFromFireAccident").innerHTML = sessionStorage.getItem("ReturnDateTimeFromFireAccident");
+        document.getElementById("prevFireControllingTime").innerHTML = sessionStorage.getItem("FireControllingTime");
+
+        var isCheckBoxTrueFalse = sessionStorage.getItem("CheckBoxValue5");
+        if (isCheckBoxTrueFalse == "true") {
+            document.getElementById("prevCheckBox5").checked = isCheckBoxTrueFalse;
+            document.getElementById("prevSpanValue").innerHTML = "ஆம்"
+        }
+        else {
+            document.getElementById("prevSpanValue").innerHTML = "இல்லை"
+        }
+        document.getElementById("prevMale1").innerHTML = sessionStorage.getItem("Male1");
+        document.getElementById("prevMale2").innerHTML = sessionStorage.getItem("Male2");
+        document.getElementById("prevMale3").innerHTML = sessionStorage.getItem("Male3");
+        document.getElementById("prevFemale1").innerHTML = sessionStorage.getItem("Female1");
+        document.getElementById("prevFemale2").innerHTML = sessionStorage.getItem("Female2");
+        document.getElementById("prevFemale3").innerHTML = sessionStorage.getItem("Female3");
+
+        var isCheckBoxTrueFalses = sessionStorage.getItem("CheckBoxValue6");
+        if (isCheckBoxTrueFalses == "true") {
+            document.getElementById("prevCheckBox6").checked = isCheckBoxTrueFalses;
+            document.getElementById("prevVipathuSpanValue").innerHTML = "ஆம்"
+        }
+        else {
+            document.getElementById("prevVipathuSpanValue").innerHTML = "இல்லை"
+        }
+
+        document.getElementById("prevVmale1").innerHTML = sessionStorage.getItem("Vmale1");
+        document.getElementById("prevVFemale1").innerHTML = sessionStorage.getItem("VFemale1");
+        document.getElementById("prevFVmale2").innerHTML = sessionStorage.getItem("Vmale2");
+        document.getElementById("prevVFemale2").innerHTML = sessionStorage.getItem("VFemale2");
+        document.getElementById("prevVmale3").innerHTML = sessionStorage.getItem("Vmale3");
+        document.getElementById("prevVFemale3").innerHTML = sessionStorage.getItem("VFemale3");
+        document.getElementById("prevVmale4").innerHTML = sessionStorage.getItem("Vmale4");
+        document.getElementById("prevVFemale4").innerHTML = sessionStorage.getItem("VFemale4");
+
+
+        document.getElementById("prevOtherdetail").innerHTML = sessionStorage.getItem("Otherdetail");*/
+    })
+</script>

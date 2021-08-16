@@ -1,0 +1,695 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <script src="scripts/jquery-1.10.2.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>தமிழ்நாடு தீயணைப்பு துறை</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/fireicon.jpg">
+    <style>
+        @font-face {
+            font-family: myTamilFont;
+            src: url(fonts/ismail_0.ttf);
+        }
+
+        span {
+            font-family: myTamilFont;
+        }
+
+        .tamilClass {
+            font-family: myTamilFont;
+        }
+
+        h5 {
+            color: #09abdd;
+        }
+
+        .subheading {
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div style="width:100%; text-align: right;font-size:10px;">
+        <span style=" padding:10px;">T.N.F.S. 25 - 90,000 Cps.-GBP., Vdm.-2015</span>
+    </div>
+    <div class="width100p">
+        <img src="images/fireacc.jpg" style="float:left" width="80">
+
+    </div>
+    <h4 style="text-align:center; padding-top:5px;padding-right:100px;">தமிழ்நாடு தீயணைப்பு துறை</h4>
+    <h4 style="text-align:center; padding-top:5px;padding-right:100px;">தீ விபத்து அறிவிக்கை</h4>
+    <h5 style="text-align:center; padding-top:5px;padding-right:10px;">ஆணை எண் 14, படிவம் எண் 37.</h5>
+    <div style="clear:both;"></div>
+    <br />
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>பொதுவானது</u></strong></h5>
+        </div>
+
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> கோட்டம் : </span>
+                    <span style="color: blue" id=prevKottamVal></span>
+                </div>
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீ விபத்து அறிக்கை எண் # : </span>
+                    <span style="color: blue" id=prevAnnouncementNo></span>
+                </div>
+            </div>
+            <div class="col-md-12">
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> நிலையம் : </span>
+                    <span style="color: blue" id=prevStationVal></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> விபத்து நேர்ந்த நாள் : </span>
+                    <span style="color: blue" id=prevAccidentDateVal></span>
+
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீயணைப்பு நடந்த இடத்தில் பொறுப்பு வகித்த அலுவலர் :
+                    </span><span style="color: blue" id=prevFireOfficerName></span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>அழைப்பு</u></strong></h5>
+        </div>
+
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> அழைத்தவர் : </span>
+                    <span style="color: blue" id=prevCallerName></span>
+
+                </div>
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தொலைபேசி / தீ எச்சரிக்கை எண் : </span>
+                    <span style="color: blue" id=prevTelephoneNo></span>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> விபத்துக்குள்ளான இடத்தின் முகவரி : </span>
+                    <span style="color: blue" id=prevAccidentAddress></span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> அனுபவிப்பவரின் பெயர் : </span>
+                    <span style="color: blue" id=prevSenderName></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தொழில் :
+                    </span><span style="color: blue" id=prevCallingsenderJob></span>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> உரிமையாளரின் பெயர், முகவரி :
+                    </span><span style="color: blue" id=prevOwnerNameAndAddress></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> அழைத்த நேரம் :
+                    </span><span style="color: blue" id=prevCallingTime></span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> வண்டிகள் முதலில் புறப்பட்டு சென்ற நேரம் :
+                    </span><span style="color: blue" id=prevVehicleStartedTime></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> விபத்து நடந்த இடத்தில் வந்து சேர்ந்த நேரம் :
+                    </span><span style="color: blue" id=prevVehicleReachedTime></span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> நிலையத்திற்கும் விபத்து நடந்த இடத்திற்குமுள்ள தொலைவு :
+                    </span><span style="color: blue" id=prevBetweenDistance></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>தீ விபத்து பற்றிய விவரங்கள்:</u></strong></h5>
+        </div>
+
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீ விபத்து நேர்ந்த நேரம் (ஏறக்குறைய) : </span>
+                    <span style="color: blue" id=prevFireaccdHappenedTime></span>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+
+                <span class="tamilClass" style="font-size: 10px;">
+                    <strong>tpgj;jpw;Fs;shd cilikapd; tptuk;, ifj;bjhHpy;
+                        fl;Lkhd khjphp, gug;g[ Kjypad</strong> </span>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீ விபத்தின் வகை : </span>
+                    <span style="color: blue" id=prevSelectedBtn></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீ விபத்தின் பரப்பு : </span>
+                    <span style="color: blue" id=prevAreaSquareOfFire></span>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> அழிபாட்டின் விவரம் : </span>
+                    <span style="color: blue" id=prevReasonForfireAccident></span>
+                </div>
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீ விபத்திற்கு காரணம் எனக் கருதப்படுவது : </span>
+                    <span style="color: blue" id=prevFireAccidentdetailList></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>அடியிற்கண்டவைகளின் உத்தேச மதிப்பு:</u></strong></h5>
+        </div>
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;">விபத்திற்குள்ளான உடமை : </span>
+                    <span style="color: blue" id=prevFireaccidentThings></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> சூழ்ந்துள்ள ஏதேனும் இடர் : </span>
+                    <span style="color: blue" id=prevEnvirontment></span>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;">விபத்திற்குள்ளான இடத்தின் அழிவு : </span>
+                    <span style="color: blue" id=prevAccidentPlaceCondition></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீயிலிருந்து காப்பாற்றபட்ட உடைமையின் மதிப்பு : </span>
+                    <span style="color: blue" id=prevFirehappenedArea></span>
+                </div>
+
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீயிலிருந்து காப்பாற்றபட்ட உடைமையின் மதிப்பு : </span>
+                    <span style="color: blue" id=prevRescueThingValue></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;">தீ விபத்து நடந்த இடத்தை விட்டுப் புறப்பட்ட கடைசி அலுவலரின் பெயர் :
+                    </span>
+                    <span style="color: blue" id=prevLastReturnFireOfficer></span>
+                </div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீ விபத்து நடந்த இடத்தை விட்டுப் புறப்பட்ட நாளும், நேரமும் :
+                    </span>
+                    <span style="color: blue" id=prevReturnDateTimeFromFireAccident></span>
+                </div>
+
+                <div class="col-md-6" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீ அணைப்பதற்குப் பிடித்த நேரம் மணி/நிமிடம் : </span>
+                    <span style="color: blue" id=prevFireControllingTime></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>தப்பித்துக்கொண்டவர்கள் / காப்பாற்றப்பட்டவர்கள்:</u></strong></h5>
+        </div>
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+            <div class="col-md-12" style="border-bottom: 1px solid gray;">
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீயணைப்பு பணியாளரின் உதவியின்றி தப்பித்து கொண்டவர்கள் </span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> கருவிகளின் உதவியின்றி தீயணைப்புப் பணியாளரால் தீயின்றும் வெளியேற
+                        உதவி செய்யப்பட்டவர்கள் </span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> கருவிகளை பயன்படுத்தி தீயணைப்புப் பணியாளரால் காப்பாற்றப்பட்டவர்கள்
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> ஆண் : </span>
+                    <span style="color: blue" id=prevMale1></span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> ஆண் : </span>
+                    <span style="color: blue" id=prevMale2></span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> ஆண் : </span>
+                    <span style="color: blue" id=prevMale3></span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> பெண் : </span>
+                    <span style="color: blue" id=prevFemale1></span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> பெண் : </span>
+                    <span style="color: blue" id=prevFemale2></span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> பெண் : </span>
+                    <span style="color: blue" id=prevFemale3></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="col-md-12">
+            <br />
+            <span class="tamilClass" style="font-size:12px ;">
+                <strong> Fwpg;g[: bgha; miHg;g[fisg;
+                    gw;wpa mwpf;ikfis, mwpf;ifg; gotj;jpy; 2 k; ghfj;jpy; FWf;fhf rptg;g[ ikapy;
+                    “bgha;ahdJ” vd;W ep\gpf;f Btz;Lk;.</strong></span>
+        </div>
+    </section>
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>விபத்துக்குள்ளானவர்கள் விவரம்:</u></strong></h5>
+        </div>
+
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+            <div class="col-md-12" style="border-bottom: 1px solid gray;">
+                <div class="col-md-3"></div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> இறந்தவர்கள் : </span>
+
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> காயமடைந்தவர்கள் : </span>
+
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீயணைப்பு பணியாளர்</span>
+
+
+                </div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> ஆண் : </span>
+                    <span style="color: blue" id=prevVmale1></span> <br />
+                </div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தீயணைப்பு பணியாளர் </span>
+
+
+                </div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> ஆண் : </span>
+                    <span style="color: blue" id=prevFVmale2></span> <br />
+                </div>
+            </div>
+
+            <div class="col-md-12" style="border-bottom: 1px solid gray;">
+                <div class="col-md-3" style="font-size:12px;padding:5px;"></div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> பெண் : </span>
+                    <span style="color: blue" id=prevVFemale1></span>
+                </div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;"></div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> பெண் : </span>
+                    <span style="color: blue" id=prevVFemale2></span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> மற்றவர்கள்</span>
+
+                </div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> ஆண் : </span>
+                    <span id=prevVmale3></span>
+                </div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> மற்றவர்கள் </span>
+
+                </div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> ஆண் : </span>
+                    <span style="color: blue" id=prevVmale4></span>
+
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3" style="font-size:12px;padding:5px;"></div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> பெண் : </span>
+                    <span style="color: blue" id=prevVFemale3></span>
+                </div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;"></div>
+                <div class="col-md-3" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> பெண் : </span>
+                    <span style="color: blue" id=prevVFemale4></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="col-md-12">
+            <br />
+            <span class="tamilClass" style="font-size: 10px;"><strong>jPaizg;g[g; gzpapdhpd; tp&aj;jpy;
+                    jPaizg;g[g; gzp vz;fisf; Fwpg;gpl;lhy; BghJkhdJ.</strong></span>
+        </div>
+    </section>
+
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>விபத்து நடந்த இடத்தில் வந்து செயலாற்றிய செயற்கருவிகளின் விவரங்கள்:</u></strong></h5>
+        </div>
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+
+            <table>
+                <tr style="border-bottom: 1px solid gray;">
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;">
+                                தீயணைப்புப் நிலையத்தின் பெயர் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> செயற்கருவியின் மாதிரி </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பதிவு எண் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> புறப்பட்ட நேரம் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> விபத்து நடந்த இடத்திற்கு வந்து சேர்ந்த நேரம் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> விபத்து நேர்ந்த இடத்தை விட்டு புறப்பட்ட நேரம் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> சொந்த நிலையத்திற்கு வந்து சேர்ந்த நேரம் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பயணம் செய்த நேரம் </span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> நீரடித்த மணி நேரம் </span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;">
+                                பெண் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பெண் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பெண் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பெண் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பெண் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பெண் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பெண் </span>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px solid gray;">
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பெண் </span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-md-1" style="font-size:12px;padding:5px;">
+                            <span style="font-weight:bold;"> பெண் </span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>வந்து செயலாற்றிய தீயணைப்பு அலுவலர் மற்றும் தீயணைப்பு பணியினர்:</u></strong></h5>
+            <h6>
+                (விடுப்பு ஆட்களை சேர்க்க கூடாது)
+            </h6>
+        </div>
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+            <div class="col-md-12" style="border-bottom: 1px solid gray;">
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> தரம்</span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> எண்</span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="font-weight:bold;"> பெயர்</span>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="color: blue" id=prevReasonForfireAccident></span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="color: blue" id=prevReasonForfireAccident></span>
+                </div>
+                <div class="col-md-4" style="font-size:12px;padding:5px;">
+                    <span style="color: blue" id=prevReasonForfireAccident></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="col-md-12 subheading">
+            <h5><strong><u>வேறு எவையேனும் குறிப்புகள்:</u></strong></h5>
+
+        </div>
+        <div class="col-md-12" style="border: 1px solid black;margin-left:30px;width:80%;">
+            <div class="col-md-12" style="font-size:12px;padding:5px;">
+                <span style="font-weight:bold;"> எண்</span>
+                <span style="color: blue" id=prevOtherdetail></span>
+            </div>
+        </div>
+    </section>
+
+
+    <div style="clear:both"></div> <br />
+    <div style="width:20%;padding: 5px;float : right">
+        <div style="font-size:14px;font-family:'Times New Roman'; color:#17566e"><b><Span>(ஒப்பம்)</Span> </b></div>
+        <div style="font-size:12px;font-family:'Times New Roman'"><Span>தீயணைப்பிற்கு பொறுப்பு வகித்த அலுவலர்</span>
+        </div>
+        <div style="font-size:12px;font-family:'Times New Roman'"><Span> தமிழ்நாடு தீயணைப்பு துறை</Span></div>
+    </div>
+    <div style="clear:both"></div> <br />
+    <div style="border-bottom:double #000000;">&nbsp;</div>
+    <!-- <table border="0" style=" border-collapse: collapse; position: absolute; bottom: 0;left:0;" width="100%">
+        <tr>
+            <td style="font-size:12px;padding:5px;">
+                <Span>T.N.F.S. 25.</Span>
+            </td>
+        </tr>
+    </table> -->
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        debugger;
+
+        document.getElementById("prevKottamVal").innerHTML = sessionStorage.getItem("Kottam");
+        document.getElementById("prevAnnouncementNo").innerHTML = sessionStorage.getItem("AnnouncementNo");
+        document.getElementById("prevStationVal").innerHTML = sessionStorage.getItem("Station");
+        document.getElementById("prevAccidentDateVal").innerHTML = sessionStorage.getItem("AccidentDate");
+        document.getElementById("prevFireOfficerName").innerHTML = sessionStorage.getItem("FireOfficerName");
+
+        document.getElementById("prevCallerName").innerHTML = sessionStorage.getItem("CallerName");
+        document.getElementById("prevTelephoneNo").innerHTML = sessionStorage.getItem("TelephoneNo");
+        document.getElementById("prevAccidentAddress").innerHTML = sessionStorage.getItem("AccidentAddress");
+
+        var isTrueFalse = sessionStorage.getItem("CheckBoxValue");
+        if (isTrueFalse == "true") {
+            document.getElementById("prevAllInOnePerson").checked = isTrueFalse;
+        }
+
+        document.getElementById("prevSenderName").innerHTML = sessionStorage.getItem("SenderName");
+        document.getElementById("prevCallingsenderJob").innerHTML = sessionStorage.getItem("CallingsenderJob");
+        document.getElementById("prevOwnerNameAndAddress").innerHTML = sessionStorage.getItem("OwnerNameAndAddress");
+        document.getElementById("prevCallingTime").innerHTML = sessionStorage.getItem("CallingTime");
+        document.getElementById("prevVehicleStartedTime").innerHTML = sessionStorage.getItem("VehicleStartedTime");
+        document.getElementById("prevVehicleReachedTime").innerHTML = sessionStorage.getItem("VehicleReachedTime");
+        document.getElementById("prevBetweenDistance").innerHTML = sessionStorage.getItem("BetweenDistance");
+
+
+        document.getElementById("prevFireaccdHappenedTime").innerHTML = sessionStorage.getItem("FireaccdHappenedTime");
+        document.getElementById("prevSelectedBtn").innerHTML = sessionStorage.getItem("SelectedBtn");
+        document.getElementById("prevAreaSquareOfFire").innerHTML = sessionStorage.getItem("AreaSquareOfFire");
+        document.getElementById("prevReasonForfireAccident").innerHTML = sessionStorage.getItem("ReasonForfireAccident");
+        document.getElementById("prevFireAccidentdetailList").innerHTML = sessionStorage.getItem("FireAccidentdetailList");
+
+        document.getElementById("prevFireaccidentThings").innerHTML = sessionStorage.getItem("FireaccidentThings");
+        document.getElementById("prevEnvirontment").innerHTML = sessionStorage.getItem("Environtment");
+        document.getElementById("prevAccidentPlaceCondition").innerHTML = sessionStorage.getItem("AccidentPlaceCondition");
+        document.getElementById("prevFirehappenedArea").innerHTML = sessionStorage.getItem("FirehappenedArea");
+        document.getElementById("prevRescueThingValue").innerHTML = sessionStorage.getItem("RescueThingValue");
+        document.getElementById("prevLastReturnFireOfficer").innerHTML = sessionStorage.getItem("LastReturnFireOfficer");
+        document.getElementById("prevReturnDateTimeFromFireAccident").innerHTML = sessionStorage.getItem("ReturnDateTimeFromFireAccident");
+        document.getElementById("prevFireControllingTime").innerHTML = sessionStorage.getItem("FireControllingTime");
+
+        var isCheckBoxTrueFalse = sessionStorage.getItem("CheckBoxValue5");
+        if (isCheckBoxTrueFalse == "true") {
+            document.getElementById("prevCheckBox5").checked = isCheckBoxTrueFalse;
+            document.getElementById("prevSpanValue").innerHTML = "ஆம்"
+        }
+        else {
+            document.getElementById("prevSpanValue").innerHTML = "இல்லை"
+        }
+        document.getElementById("prevMale1").innerHTML = sessionStorage.getItem("Male1");
+        document.getElementById("prevMale2").innerHTML = sessionStorage.getItem("Male2");
+        document.getElementById("prevMale3").innerHTML = sessionStorage.getItem("Male3");
+        document.getElementById("prevFemale1").innerHTML = sessionStorage.getItem("Female1");
+        document.getElementById("prevFemale2").innerHTML = sessionStorage.getItem("Female2");
+        document.getElementById("prevFemale3").innerHTML = sessionStorage.getItem("Female3");
+
+        var isCheckBoxTrueFalses = sessionStorage.getItem("CheckBoxValue6");
+        if (isCheckBoxTrueFalses == "true") {
+            document.getElementById("prevCheckBox6").checked = isCheckBoxTrueFalses;
+            document.getElementById("prevVipathuSpanValue").innerHTML = "ஆம்"
+        }
+        else {
+            document.getElementById("prevVipathuSpanValue").innerHTML = "இல்லை"
+        }
+
+        document.getElementById("prevVmale1").innerHTML = sessionStorage.getItem("Vmale1");
+        document.getElementById("prevVFemale1").innerHTML = sessionStorage.getItem("VFemale1");
+        document.getElementById("prevFVmale2").innerHTML = sessionStorage.getItem("Vmale2");
+        document.getElementById("prevVFemale2").innerHTML = sessionStorage.getItem("VFemale2");
+        document.getElementById("prevVmale3").innerHTML = sessionStorage.getItem("Vmale3");
+        document.getElementById("prevVFemale3").innerHTML = sessionStorage.getItem("VFemale3");
+        document.getElementById("prevVmale4").innerHTML = sessionStorage.getItem("Vmale4");
+        document.getElementById("prevVFemale4").innerHTML = sessionStorage.getItem("VFemale4");
+
+
+        document.getElementById("prevOtherdetail").innerHTML = sessionStorage.getItem("Otherdetail");
+    })
+</script>

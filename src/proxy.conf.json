@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://tnfsd-be.cleverapps.io",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

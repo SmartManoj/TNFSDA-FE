@@ -1,0 +1,99 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- <head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+<!--===============================================================================================-->
+<!-- </head> --> 
+<body>
+	<span class="Heading2">திருவாரூர் தீயணைப்பு மீட்பு பணிகள் நிலையம் பணியாளர்கள் மாத உணவுக் கட்டண பிரேரணை</span>
+	<div class="limiter">
+        
+		<div class="background">
+			<div class="wrap-login100">
+                <!-- <div class="contentinner">
+                    <div class="row"> -->
+				
+               <div class="col-sm-12 margintop10">
+                    <div class="col-sm-4 col-md-4">
+                        <label class="label">From Date: </label>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <input  type="date" [(ngModel)]="FromDate" placeholder="" style="width:100%;">
+                    </div>
+                    <div class="clear"></div>
+                  
+                </div>
+                <div class="col-sm-12 margintop10">
+                    <div class="col-sm-4 col-md-4" style="margin-right: 348px;">
+                        <label class="label">To Date: </label>
+                    </div>
+                    <div class="col-sm-4 col-md-4"  style="margin-right: 348px;">
+                        <input  type="date"  [(ngModel)]="ToDate" placeholder="" style="width:100%;">
+                    </div>
+                 
+                    <div class="clear"></div>
+                </div>
+                <div class="col-sm-12 margintop10">
+                    <div  class="col-sm-6 col-md-6" >
+                        <button style="margin-left: -313px;" class="btn btn-success" (click)="SubmitData()">Generate Report</button>
+                    </div>
+                    </div>
+                    <!-- </div>
+                </div> -->
+                    <table class="table table-bordered" *ngIf="FeedingData.length>0" id="dataTable" width="100%" cellspacing="0">
+       
+            <thead>
+            <!-- <tr *ngFor="let item of FeedingData;let i=insdex;"> -->
+                <tr>
+                   
+                <!-- <th style="width:0.1%;">வ.எண்</th>
+                <th style="width: 10%;">தரம் எண் பெயர்</th> -->
+                <!-- <th style="width: 10%;" *ngFor="let item of TableData;let i=index;">{{item.type }}
+                {{ item.vehicle_reached_time }}-{{ item.vehicle_start_time }} நாள்: {{item.accident_date}}</th> -->
+                <th>Type</th>
+               <th  *ngFor="let item3 of TableDataFireMan;let i=index;">{{item3.id_number}} {{ item3.first_name }} {{ item3.last_name}}</th>
+                <!-- <th>Total Amount</th> -->
+            </tr>
+            <tr *ngFor="let item2 of FeedingData;let i=index;">
+              
+                <!-- <td *ngFor="let item3 of TableDataFireMan;let i=index;">{{item3.status}}</td> -->
+                <td>{{item2.type }}{{ item2.vehicle_reached_time }}-{{ item2.vehicle_start_time }} நாள்: {{item2.accident_date}}</td>
+                <td *ngFor = "let item4 of item2.call_data">{{item4.feeding_amount}}</td>
+
+            </tr>
+            <th>Total</th>
+            <th *ngFor="let list of TotalAmountData;let i=index">
+                <tr>{{list.total_feeding_amount}}</tr>
+                
+            </th>
+        </thead>                   
+        <tbody>
+            <!-- <tr  *ngFor="let item3 of TableDataFireMan;let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{item3.id_number}} {{ item3.first_name }} {{ item3.last_name}}</td>
+            </tr> -->
+            <!-- <tr *ngFor="let item2 of FeedingData;let i=index;">
+                <td *ngFor = "let item4 of item2.call_data">{{item4.feeding_amount}}</td>
+            </tr> -->
+        </tbody>
+        </table>
+     
+</div>
+			
+			
+		</div>
+	</div>
+	
+
+<!--===============================================================================================-->
+	
+
+</body>
+</html>
