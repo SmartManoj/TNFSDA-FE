@@ -1,6 +1,6 @@
 @echo off
-git init -b main
+rem git init -b main
 git add .
 git commit -am "make it better"
-git remote add origin  https://github.com/sudo-ranjith/TNFSDA-FE
+rem git remote add origin  https://github.com/sudo-ranjith/TNFSDA-FE
 git push --force origin main 
