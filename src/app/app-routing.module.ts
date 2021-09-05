@@ -19,12 +19,12 @@ const routes: Routes = [
     component: AppComponent,
     children: [
       {
-        path:'',
+        path:'register',
         component: RegistrationComponent,
          pathMatch: 'full'
       },
       {
-        path: 'login',
+        path: '',
         component: LoginComponent
       },
       {

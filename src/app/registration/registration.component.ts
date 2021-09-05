@@ -39,7 +39,7 @@ export class RegistrationComponent implements OnInit {
   }
   login()
   {
-    this.route.navigate(['/login']);
+    this.route.navigate(['/']);
   }
   FormGroupInit()
   {
