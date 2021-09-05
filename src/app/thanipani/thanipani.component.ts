@@ -150,7 +150,7 @@ this.Kottam = 'தேர்வு செய்யவும்';
     this.Type = this.Service.PreviewData.type;
     this.RescuedMembers = this.Service.PreviewData.escaped_or_rescued_active;
     this.Adipaadugal = this.Service.PreviewData.adipaadugal_active;
-    if(this.Service.PreviewData.escaped_or_rescued.length>0)
+    if(0 && this.Service.PreviewData.escaped_or_rescued.length>0)
     {
     this.EscapedorRescued = this.Service.PreviewData.escaped_or_rescued;
     this.WithoutHelp = this.Service.PreviewData.escaped_or_rescued[0].without_help;
@@ -158,7 +158,7 @@ this.Kottam = 'தேர்வு செய்யவும்';
     this.WithTools =  this.Service.PreviewData.escaped_or_rescued[0].with_tools;
     }
     this.AdipadugalFire =  this.Service.PreviewData.adipadugal_fire;
-    if(this.Service.PreviewData.adipadugal_fire.length>0)
+    if(0 && this.Service.PreviewData.adipadugal_fire.length>0)
     {
     this.DeadFireMan = this.Service.PreviewData.adipadugal_fire[0].dead;
     this.InjuredFireMan = this.Service.PreviewData.adipadugal_fire[0].injured;

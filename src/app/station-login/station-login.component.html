@@ -221,7 +221,7 @@
                                             <tr *ngFor="let item of TableData;let i=index;">
                                                 <td>{{item.arikkai_number}}</td>
                                                 <td>{{item.type.replace('Thanipani','தனிப்பணி').replace('theevibathu','தீ விபத்து')}}</td>
-                                                <td *ngIf="item.type=='Thanipani'">{{item.rescue_work.replace('Rescue','மீட்ப்பு').replace('rescue','மீட்ப்பு').replace('cow','மாடு').replace('Snake','பாம்பு')}}</td>
+                                                <td *ngIf="item.type=='Thanipani'">{{item.rescue_work.replace('Rescue','மீட்பு').replace('rescue','மீட்பு').replace('cow','மாடு').replace('Snake','பாம்பு')}}</td>
                                                 <td *ngIf="item.type=='theevibathu'">{{item.reason_fortheincident.replace('test','டெஸ்ட்')}}</td>
                                                 <td><a class="btn btn-success btnClass" (click)="EditRejectedForm(item)">திருத்து</a></td>
                                                 <td><a class="btn btn-success btnClass" (click)="ViewStatus(item)" data-toggle="modal" data-target="#myModal">பார்</a></td>
@@ -271,17 +271,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3">
+                                   <!--  <div class="col-3">
                                         <div class="d-table-row"> <a href=#><i class="fa fa-phone" aria-hidden="true"></i></a> </div>
                                         <div class="d-table-row"> <a href=#><i class="fa fa-envelope" aria-hidden="true"></i></a> </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Status div Ends-->
-                <footer class="py-4 bg-light mt-auto">
+                <!-- <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2020</div>
@@ -292,7 +292,7 @@
                             </div>
                         </div>
                     </div>
-                </footer>
+                </footer> -->
             </div>
         </div>
         <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
